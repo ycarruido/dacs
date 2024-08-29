@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 500" class="container">
+  <!-- Column Titles -->
+  <text class="column-title column-title1" x="175" y="150">Enfoque de Proceso</text>
+  <text class="column-title column-title2" x="430" y="150">Tecnologías</text>
+
+  <!-- Column 1 - Development Phases -->
+  <g class="column-1">
+    <rect class="block block-phase1" x="50" y="400" width="250" height="50" style="--i:0;" />
+    <text class="text1" x="175" y="430" style="--i:0;">Planificación estratégica</text>
+
+    <rect class="block block-phase2" x="50" y="350" width="250" height="50" style="--i:1;" />
+    <text class="text1" x="175" y="380" style="--i:1;">Desarrollo ágil</text>
+
+    <rect class="block block-phase3" x="50" y="300" width="250" height="50" style="--i:2;" />
+    <text class="text1" x="175" y="330" style="--i:2;">Comunicación constante</text>
+
+    <rect class="block block-phase4" x="50" y="250" width="250" height="50" style="--i:3;" />
+    <text class="text1" x="175" y="280" style="--i:3;">Resolución de problemas</text>
+
+    <rect class="block block-phase5" x="50" y="200" width="250" height="50" style="--i:4;" />
+    <text class="text1" x="175" y="230" style="--i:4;">Pruebas y optimización</text>
+  </g>
+
+  <!-- Column 2 - Tools/Technologies -->
+  <g class="column-2">
+    <rect class="block block-uxui" x="305" y="400" width="250" height="50" style="--i:0;" />
+    <text class="text2" x="430" y="430" style="--i:0;">Diseño UX/UI</text>
+
+    <rect class="block block-nextjs" x="305" y="350" width="250" height="50" style="--i:1;" />
+    <text class="text2" x="430" y="380" style="--i:1;">Next.js / React.js / Angular </text>
+
+    <rect class="block block-tailwind" x="305" y="300" width="250" height="50" style="--i:2;" />
+    <text class="text2" x="430" y="330" style="--i:2;">Tailwind / Bootstrap / Material UI</text>
+
+    <rect class="block block-prisma" x="305" y="250" width="250" height="50" style="--i:3;" />
+    <text class="text2" x="430" y="280" style="--i:3;">Prisma / MySQL / Firebase </text>
+
+    <rect class="block block-vercel" x="305" y="200" width="250" height="50" style="--i:4;" />
+    <text class="text2" x="430" y="230" style="--i:4;">Vercel / Netlify / AWS</text>
+  </g>
+</svg>

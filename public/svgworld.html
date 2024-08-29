@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Software Development Animation</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f7fafc;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    svg {
+      width: 700px;
+      height: auto;
+      position: relative;
+    }
+
+    .block {
+      rx: 10;
+      ry: 10;
+      stroke-width: 2;
+      opacity: 0;
+      animation: dropDown 1s ease-in-out forwards;
+    }
+
+    .block-phase1 {
+      fill: #a7cbf3;
+      stroke: #8cb2df;
+    }
+
+    .block-phase2 {
+      fill: #7a96b6;
+      stroke: #5b7797;
+    }
+
+    .block-phase3 {
+      fill: #a7cbf3;
+      stroke: #8cb2df;
+    }
+
+    .block-phase4 {
+      fill: #7a96b6;
+      stroke: #5b7797;
+    }
+
+    .block-phase5 {
+      fill: #a7cbf3;
+      stroke: #8cb2df;
+    }
+
+    .block-tool {
+      stroke: #fff;
+    }
+
+    .block-uxui {
+      fill: #136196; /* Color similar al diseño UX/UI */
+    }
+
+    .block-nextjs {
+      fill: #000000; /* Color del logo de Next.js */
+    }
+
+    .block-tailwind {
+      fill: #0c9ad6; /* Color de TailwindCSS */
+    }
+
+    .block-prisma {
+      fill: #090a15; /* Color de Prisma */
+    }
+
+    .block-vercel {
+      fill: #23369d; /* Color del logo de Vercel */
+    }
+
+    .text1, .text2, .column-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 16px;
+      text-anchor: middle;
+      opacity: 0;
+      animation: dropDown 1s ease-in-out forwards;
+      font-weight: 600;
+      dominant-baseline: middle;
+    }
+
+    .text1, .column-title1 {
+      fill: #000000;
+    }
+
+    .text2, .column-title2 {
+      fill: #fff;
+    }
+
+    @keyframes dropDown {
+      from {
+        transform: translateY(-100px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes cycleAnimation {
+      0% {
+        opacity: 1;
+      }
+      24% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 1;
+      }
+      74% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
+    @keyframes movePattern {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(50px);
+      }
+    }
+
+    .pattern-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.9;
+      animation: movePattern 10s linear infinite;
+    }
+
+    .container {
+      animation: cycleAnimation 15s infinite;
+      position: relative;
+    }
+
+    .column-1 .block,
+    .column-1 .text1 {
+      animation-delay: calc(1s * var(--i));
+    }
+
+    .column-2 .block,
+    .column-2 .text2 {
+      animation-delay: calc(1s * (var(--i) + 5));
+    }
+
+  </style>
+</head>
+<body>
+
+<svg viewBox="0 0 700 500" class="container" style="border-width:1px; border-style:solid;border-color:red">
+  <!-- Background pattern -->
+  <defs>
+    <pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="5" cy="5" r="2" fill="#ccc" />
+    </pattern>
+  </defs>
+  <rect class="pattern-background" x="0" y="0" width="600" height="500" fill="url(#dots)" />
+
+  <!-- Column Titles -->
+  <text class="column-title column-title1" x="190" y="60">Enfoque de Proceso</text>
+  <text class="column-title column-title1" x="505" y="60">Opciones de Desarrollo</text>
+
+  <!-- Column 1 - Development Phases -->
+  <g class="column-1">
+    <rect class="block block-phase1" x="10" y="400" width="330" height="70" style="--i:0;" />
+    <text class="text1" x="175" y="430" style="--i:0;" dominant-baseline="middle">Investigación y Planificación</text>
+
+    <rect class="block block-phase2" x="10" y="330" width="330" height="70" style="--i:1;" />
+    <text class="text1" x="175" y="365" style="--i:1;" dominant-baseline="middle">Diseño del Prototipo</text>
+
+    <rect class="block block-phase3" x="10" y="260" width="330" height="70" style="--i:2;" />
+    <text class="text1" x="175" y="295" style="--i:2;" dominant-baseline="middle">Desarrollo Ágil</text>
+
+    <rect class="block block-phase4" x="10" y="190" width="330" height="70" style="--i:3;" />
+    <text class="text1" x="175" y="225" style="--i:3;" dominant-baseline="middle">Pruebas y Control de Calidad</text>
+
+    <rect class="block block-phase5" x="10" y="120" width="330" height="70" style="--i:4;" />
+    <text class="text1" x="175" y="155" style="--i:4;" dominant-baseline="middle">Despliegue y Optimización Continua</text>
+  </g>
+
+  <!-- Column 2 - Tools/Technologies -->
+  <g class="column-2">
+    <rect class="block block-uxui" x="360" y="400" width="330" height="70" style="--i:0;" />
+    <text class="text2" x="510" y="435" style="--i:0;" dominant-baseline="middle">Diseño UX/UI</text>
+
+    <rect class="block block-nextjs" x="360" y="330" width="330" height="70" style="--i:1;" />
+    <text class="text2" x="510" y="365" style="--i:1;" dominant-baseline="middle">Next.js / React.js / Angular </text>
+
+    <rect class="block block-tailwind" x="360" y="260" width="330" height="70" style="--i:2;" />
+    <text class="text2" x="510" y="295" style="--i:2;" dominant-baseline="middle">Tailwind / Bootstrap / Material UI</text>
+
+    <rect class="block block-prisma" x="360" y="190" width="330" height="70" style="--i:3;" />
+    <text class="text2" x="510" y="225" style="--i:3;" dominant-baseline="middle">Prisma / MySQL / Firebase </text>
+
+    <rect class="block block-vercel" x="360" y="120" width="330" height="70" style="--i:4;" />
+    <text class="text2" x="510" y="155" style="--i:4;" dominant-baseline="middle">Vercel / Netlify / AWS</text>
+  </g>
+</svg>
+
+</body>
+</html>
