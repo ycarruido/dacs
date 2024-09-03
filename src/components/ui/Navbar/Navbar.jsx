@@ -96,7 +96,7 @@
                                 }
                                 <li>
                                     <NavLink
-                                        href="/get-started"
+                                        href="/contact"
                                         className="menu block font-medium text-sm text-white bg-sky-800 hover:bg-sky-600 active:bg-sky-900 md:inline"
                                     >
                                         Contacto

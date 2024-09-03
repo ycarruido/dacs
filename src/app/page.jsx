@@ -16,19 +16,20 @@ function HomePage() {
         <meta name="robots" content="index" />
       </Head>
       <Hero />
+
+
       <Services />
-      <StyledWrapper>
+      <ListTools />
+      {/* <StyledWrapper className="bg-slate-500 py-12">
         
-        <div className="bg-white p-4">
-          <ListTools />
+        <div >
+          
         </div>
-      </StyledWrapper>
+      </StyledWrapper> */}
 
       <ButtonCTA />
       <DevelopmentStrategy />
-<div id="testimonials0505">
-hhhhhhhhhhhhhhhhhholass
-</div>
+
       <About />
 
       {/* <StyledWrapper>

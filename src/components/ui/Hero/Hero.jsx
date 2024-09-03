@@ -2,7 +2,7 @@ import NavLink from "../NavLink/NavLink";
 import SVGAnimationn from "../../SVGAnimation";
 
 const Hero = () => (
-    <section className="flex items-center" style={{ height: 'calc(100vh - 150px)' }}> {/* Contenedor con altura de pantalla y centrado */}
+    <section className="pb-4 mb-24 flex items-center" style={{ height: 'calc(100vh - 150px)' }}> {/* Contenedor con altura de pantalla y centrado */}
         {/* <div className="custom-screen py-10 text-gray-600 flex flex-col h-full bg-blue-500"> */}
             <div className="flex w-full px-20 mx-auto h-full"> {/* Ajusta la altura al contenedor */}
                 {/* Columna izquierda (60%) */}
@@ -15,7 +15,7 @@ const Hero = () => (
                     </p>
                     <div className="flex items-center justify-center md:justify-start gap-x-3 font-medium text-sm">
                         <NavLink
-                            href="/get-started"
+                            href="/contact"
                             className="text-white bg-sky-800 hover:bg-sky-600 active:bg-sky-900"
                         >
                             Contáctanos Hoy

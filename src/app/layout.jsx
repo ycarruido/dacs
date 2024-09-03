@@ -1,7 +1,7 @@
 
-import Footer from '@/components/ui/Footer/Footer';
+import Footer from '@/src/components/ui/Footer/Footer';
 import '../styles/globals.css';
-import Navbar from '@/components/ui/Navbar/Navbar';
+import Navbar from '@/src/components/ui/Navbar/Navbar';
 
 import {
   Poppins
@@ -23,7 +23,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={poppins.className} >
         <Navbar />
-        {children}
+          <main>
+            {children}
+          </main>
         <Footer />
       </body>
     </html>
