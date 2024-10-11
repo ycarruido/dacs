@@ -1,5 +1,5 @@
-import NavLink from "@/components/ui/NavLink/NavLink";
-import SectionWrapper from "@/components/SectionWrapper";
+import NavLink from "../../ui/NavLink/NavLink";
+import SectionWrapper from "../../SectionWrapper";
 
 function About() {
   return (

@@ -6,8 +6,10 @@ import FooterCTA from "../components/ui/ActionCall/ActionCall";
 import Hero from "../components/ui/Hero/Hero";
 import ListTools from "../components/ui/ListTools/ListTools";
 import Testimonials from "../components/ui/Testimonials/Testimonials";
-import DevelopmentStrategy from "../components/ui/DevelopmentStrategy/DevelopmentStrategy";
-import About from "@/components/ui/About/About";
+import Strategys from "../components/ui/Strategys/Strategys";
+import About from "../components/ui/About/About";
+import StatsSection from "../components/ui/StatsSection/StatsSection";
+import FeaturesApps from "../components/ui/FeaturesApps/FeaturesApps";
 
 function HomePage() {
   return (
@@ -16,26 +18,31 @@ function HomePage() {
         <meta name="robots" content="index" />
       </Head>
       <Hero />
-
-
       <Services />
       <ListTools />
-      {/* <StyledWrapper className="bg-slate-500 py-12">
-        
-        <div >
-          
-        </div>
-      </StyledWrapper> */}
-
       <ButtonCTA />
-      <DevelopmentStrategy />
-
+      <StatsSection />
       <About />
 
-      {/* <StyledWrapper>
-        <Testimonials />
-      </StyledWrapper> */}
-      <FooterCTA />
+      <Strategys
+        strTitle="Estrategia de Desarrollo "
+        strsubtitle="Enfocados en una metodología ágil, colaboramos estrechamente con nuestros clientes para desarrollar soluciones tecnológicas escalables y personalizadas, desde la planificación hasta la implementación."
+        strText={[
+          "Análisis de requerimientos y planificación.",
+          "Diseño de prototipos y pruebas de concepto.",
+          "Desarrollo ágil con iteraciones continuas.",
+          "Integración y pruebas exhaustivas.",
+          "Implementación y soporte continuo.",
+        ]}
+        strBtn="Leer más"
+        path="devStrategy"
+      />
+
+      <div className="container mx-auto px-8 pb-12">
+        <FeaturesApps />
+      </div>
+
+      {/* <FooterCTA /> */}
     </>
   );
 }

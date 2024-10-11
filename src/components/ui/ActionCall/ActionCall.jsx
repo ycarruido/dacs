@@ -12,7 +12,7 @@ const ActionCall = () => (
                   Diseño Profesional para una Experiencia Web Inigualable
                 </p>
                 <NavLink
-                    href="/get-started"
+                    href="/contact"
                     className="mt-4 inline-block font-medium text-sm text-white bg-sky-800 hover:bg-sky-600 active:bg-sky-900"
                 >
                     Conéctate con nosotros

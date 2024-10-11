@@ -1,6 +1,7 @@
-import NavLink from "../NavLink/NavLink";
+import Link from "next/link";
 import SVGAnimationn from "../../SVGAnimation";
 
+// import NavLink from "../NavLink/NavLink";
 const Hero = () => (
     <section className="pb-4 mb-24 flex items-center" style={{ height: 'calc(100vh - 150px)' }}> {/* Contenedor con altura de pantalla y centrado */}
         {/* <div className="custom-screen py-10 text-gray-600 flex flex-col h-full bg-blue-500"> */}
@@ -14,19 +15,18 @@ const Hero = () => (
                         Obtén presencia en línea de primera clase y automatiza tus procesos internos con nuestras soluciones: Desarrollo Web • Desarrollo de Apps • Infraestructura • Soporte
                     </p>
                     <div className="flex items-center justify-center md:justify-start gap-x-3 font-medium text-sm">
-                        <NavLink
-                            href="/contact"
-                            className="text-white bg-sky-800 hover:bg-sky-600 active:bg-sky-900"
+                        <Link
+                            href="/contact" className="menu block font-medium text-sm text-white bg-sky-800 hover:bg-sky-600 active:bg-sky-900 md:inline-block px-4 py-2 rounded-lg text-center"
                         >
                             Contáctanos Hoy
-                        </NavLink>
-                        <NavLink
+                        </Link>
+                        <Link
                             href="#cta"
-                            className="text-gray-700 border hover:bg-gray-50"
+                            className="menu block font-medium  text-gray-700 border bg-gray-200 hover:bg-gray-50 md:inline-block px-4 py-2 rounded-lg text-center"
                             scroll={false}
                         >
                             Leer Más
-                        </NavLink>
+                        </Link>
                     </div>
                 </div>
                 {/* Columna derecha (40%) */}

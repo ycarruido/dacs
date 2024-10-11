@@ -42,7 +42,7 @@ const ButtonCTA = () => {
               Aprovecha la Potencia de una Aplicación Diseñada a Medida
             </p>
             <NavLink
-              href="/get-started"
+              href="/contact"
               className="inline-block mt-4 font-medium text-sm text-white bg-sky-800 hover:bg-sky-600 active:bg-sky-900 px-6 py-3 rounded-md"
             >
               Solicita hoy mismo

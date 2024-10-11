@@ -51,3 +51,10 @@
     background-clip: padding-box, border-box;
     background-origin: padding-box, border-box;
 }
+
+.border-gradient {
+  border-width: 4px; /* Ajusta el grosor del borde según sea necesario */
+  border-image: linear-gradient(to right, #38bdf8, #0ea5e9); /* Degradado de sky-600 a otro color */
+  border-image-slice: 1; /* Asegura que el degradado se aplique al borde completo */
+  border-radius: 1.5rem; /* Asegúrate de que el borde redondeado se mantenga */
+}

@@ -1,7 +1,8 @@
 
-import Footer from '@/src/components/ui/Footer/Footer';
+import Footer from '../components/ui/Footer/Footer';
 import '../styles/globals.css';
-import Navbar from '@/src/components/ui/Navbar/Navbar';
+import Navbar from '../components/ui/Navbar/Navbar';
+import BackToTopButton from '../components/ui/BackToTopButton/BackToTopButton';
 
 import {
   Poppins
@@ -27,6 +28,7 @@ export default function RootLayout({ children }) {
             {children}
           </main>
         <Footer />
+        <BackToTopButton />
       </body>
     </html>
   )
