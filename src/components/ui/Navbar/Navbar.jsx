@@ -9,7 +9,6 @@ const Navbar = () => {
     const pathname = usePathname(); // Usamos usePathname para observar cambios de ruta
     const navigation = [
         { title: "Servicios", path: "#services900" },
-        { title: "Equipo", path: "#testimonials0505" },
         { title: "Empresa", path: "#about901" },
         { title: "Portafolio", path: "/portfolio" }, // Cambiamos a la ruta absoluta
         { title: "Blog", path: "#testimonials" },

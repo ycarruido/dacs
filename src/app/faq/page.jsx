@@ -17,7 +17,7 @@ const faqs = [
       },
       {
         question: "¿Qué nos diferencia de otras empresas de desarrollo?",
-        answer: "Nos destacamos por nuestra metodología ágil y enfoque personalizado. Trabajamos estrechamente con cada cliente para ofrecer soluciones que realmente se ajusten a sus necesidades específicas, garantizando resultados de calidad y a tiempo.",
+        answer: "Trabajamos estrechamente con cada cliente para ofrecer soluciones que realmente se ajusten a sus necesidades específicas, garantizando resultados de calidad y a tiempo.",
       },
     ],
   },

@@ -12,18 +12,25 @@ const Stat = ({ IconComponent, number, label }) => {
   useEffect(() => {
     const handleScroll = () => {
       const element = document.getElementById("stats-section");
-      
-      // Verificar si el elemento existe
       if (element) {
         const rect = element.getBoundingClientRect();
-        if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+        // Verificar si el elemento está visible en la ventana
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
           setIsVisible(true);
         }
       }
     };
-  
+
     window.addEventListener("scroll", handleScroll);
-  
+    // Ejecutar la verificación una vez al cargar el componente
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
     if (isVisible) {
       let start = 0;
       const increment = Math.ceil(number / 100); // Velocidad del contador
@@ -37,8 +44,6 @@ const Stat = ({ IconComponent, number, label }) => {
         }
       }, 20);
     }
-  
-    return () => window.removeEventListener("scroll", handleScroll);
   }, [isVisible, number]);
 
   return (
@@ -72,4 +77,3 @@ const StatsSection = () => {
 };
 
 export default StatsSection;
-
