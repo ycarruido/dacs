@@ -19,11 +19,11 @@
         try{    
             const smtpEmail = new brevo.SendSmtpEmail();
             smtpEmail.subject = subject;
-            smtpEmail.to = [{name: "DACSYS WEB", email: process.env.EMAIL_HOST_USER}];
+            smtpEmail.to = [{name: "DACSYS WEB", email: "yhonatandcarruido@gmail.com"}];
             smtpEmail.htmlContent = ContactEmailTemplate(body, lead);
             smtpEmail.sender = {
                 name: "DACSYS",
-                email: process.env.EMAIL_HOST_USER
+                email: "yhonatandcarruido@gmail.com"
             };
 
             await apiInstance.sendTransacEmail(smtpEmail);
