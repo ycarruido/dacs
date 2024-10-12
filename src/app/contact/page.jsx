@@ -132,7 +132,7 @@ export default function GetStarted() {
 
               {/* Mostrar mensaje de confirmación si el formulario fue enviado */}
               {formSent && (
-                <p className="text-sky-600 mt-4">¡Tu mensaje ha sido enviado con éxito! Gracias por contactarnos. Te responderemos a la brevedad.</p>
+                <p className="text-green-700 mt-4">¡Tu mensaje ha sido enviado con éxito! Gracias por contactarnos. Te responderemos a la brevedad.</p>
               )}
             </div>
           </div>
