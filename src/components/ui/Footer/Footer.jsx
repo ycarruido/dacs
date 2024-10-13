@@ -22,10 +22,10 @@ const Footer = () => (
                             <span className="mr-2 text-sky-300">→</span>
                             <a target="_blank" href="https://wa.me/5804141700657" className="hover:underline text-sky-300">WhatsApp</a>
                         </li>
-                        <li className="flex items-center">
+                        {/* <li className="flex items-center">
                             <span className="mr-2 text-sky-300">→</span>
                             <a target="_blank" href="https://wa.me/5804141700657" className="hover:underline text-sky-300">contacto@dacsystem.com</a>
-                        </li>
+                        </li> */}
                     </ul>
 
                 </div>
@@ -46,7 +46,7 @@ const Footer = () => (
                     <ul className="text-sm font-light list-disc pl-5">
                         <li>WhatsApp +58 414 1700657.</li> 
                         <li>Estamos ubicados en Caracas.</li>
-                        <li>contacto@dacsystem.com</li>
+                        {/* <li>contacto@dacsystem.com</li> */}
                     </ul>
                 </div>
                 

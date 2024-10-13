@@ -25,7 +25,7 @@ const Hero = () => (
             Contáctanos Hoy
           </Link>
           <Link
-            href="#cta"
+            href="/servicesDet/appDev"
             className="menu block w-full md:w-auto font-medium text-gray-700 border bg-gray-200 hover:bg-gray-50 px-4 py-2 rounded-lg text-center mt-2 md:mt-0"
             scroll={false}
           >
