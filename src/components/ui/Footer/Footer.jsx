@@ -69,7 +69,7 @@ const Footer = () => (
                     key={idx}
                     href={network.href}
                     aria-label="social media"
-                    target="_blank"
+                    // target="_blank"
                     rel="noreferrer"
                     className='rounded-md hover:bg-sky-700 transition-colors'
                     >
