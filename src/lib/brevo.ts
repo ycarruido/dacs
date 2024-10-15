@@ -32,3 +32,34 @@
         }
         
     }
+
+    export async function createContact(lead: { email: string; name: string }) {
+        try {
+            const contactsApi = new brevo.ContactsApi();
+            
+            // Configurar la clave API para la instancia de contactos
+            contactsApi.setApiKey(
+                brevo.ContactsApiApiKeys.apiKey,
+                process.env.BREVO_DACS_API_KEY as string
+            );
+    
+            const contact = new brevo.CreateContact();
+            contact.email = lead.email;
+    
+            // Configura los atributos
+            contact.attributes = {
+                NOMBRE: lead.name,
+                EMAIL: lead.email
+                // Agrega otros atributos si es necesario
+            };
+    
+            // Asegúrate de que el ID de la lista sea un número
+            contact.listIds = [Number(process.env.BREVO_CONTACT_LIST_ID)];
+    
+            // Crear el contacto
+            const response = await contactsApi.createContact(contact);
+            console.log('Contacto creado exitosamente:', JSON.stringify(response));
+        } catch (error) {
+            console.error('Error al crear el contacto:', error);
+        }
+    }

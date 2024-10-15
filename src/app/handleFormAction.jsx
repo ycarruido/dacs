@@ -1,5 +1,5 @@
 "use server"
-import { sendEmail } from "../lib/brevo";
+import { sendEmail, createContact } from "../lib/brevo";
 //import { redirect } from "next/navigation";
 
  export async function handleForm(formData){
@@ -28,6 +28,12 @@ import { sendEmail } from "../lib/brevo";
       lead: [{name: name, email: email}],
       body: message
     })
+
+
+    const lead = { email: email, name: name };
+    await createContact(lead);
+
+
 
     //redirect('/contact')
   }

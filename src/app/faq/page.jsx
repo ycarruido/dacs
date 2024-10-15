@@ -67,6 +67,10 @@ const faqs = [
         answer: "Nos tomamos el tiempo para conocer a fondo los objetivos y retos de cada cliente. Ofrecemos soluciones personalizadas y ajustadas a sus necesidades particulares, ya sea en desarrollo de software, marketing digital o ambos.",
       },
       {
+        question: "¿Podemos tener reuniones presenciales?",
+        answer: "Sí, podemos coordinar reuniones presenciales o virtuales según tus necesidades. La flexibilidad es clave para nosotros.",
+      },
+      {
         question: "¿Cuál es la relación de DACS con sus clientes a largo plazo?",
         answer: "En DACS buscamos relaciones a largo plazo basadas en la confianza y el compromiso. Ofrecemos soporte continuo para asegurar que las soluciones que implementamos sigan siendo efectivas con el tiempo.",
       },

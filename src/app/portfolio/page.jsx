@@ -36,7 +36,7 @@ const Portfolio = () => {
         prdId: "02",
         title: "Aplicación Móvil de Gestión de Proyectos en Angular y Node",
         description:
-          "Desarrollamos una aplicación de gestión de proyectos con Angular, Node.js y desplegada en Firebase. Esta herramienta permite gestionar, asignar y seguir el progreso de proyectos académicos de manera eficiente.",
+          "Desarrollamos una aplicación de gestión de proyectos con Angular, Ionic, Node.js. Esta herramienta permite gestionar, asignar y seguir el progreso de proyectos académicos de manera eficiente.",
         features: [
           {
             str1: "Gestión completa de proyectos: crear, modificar y eliminar tareas.",
