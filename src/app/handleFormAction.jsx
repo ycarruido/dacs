@@ -5,6 +5,8 @@ import { sendEmail, createContact } from "../lib/brevo";
  export async function handleForm(formData){
     const name = formData.get('name');
     const email = formData.get('email');
+    const phone = formData.get('phone');
+    const company = formData.get('company')
     const message = formData.get('message');
     const about = formData.getAll('about');
 
@@ -25,13 +27,13 @@ import { sendEmail, createContact } from "../lib/brevo";
     
     await sendEmail({
       subject: aboutStr,
-      lead: [{name: name, email: email}],
+      lead: [{name: name, email: email, phone: phone, company: company}],
       body: message
     })
 
-
-    const lead = { email: email, name: name };
-    await createContact(lead);
+    const lead = {email: email, name: name, phone: phone, company: company, status: 'LEAD'};
+    //const lead = { email: email, name: name };
+    await createContact(lead, message);
 
 
 

@@ -91,8 +91,8 @@ export default function GetStarted() {
                   </div>
 
                   <div class="relative w-1/2 ml-1">
-                    <input type="tel" id="empresa" name="empresa" class="peer h-10 w-full border border-gray-300 rounded-md shadow-sm p-2 text-gray-900 placeholder-transparent focus:outline-none focus:border-sky-800" placeholder="Empresa" aria-label="Empresa"/>
-                    <label for="empresa" class="absolute left-0 -top-3.5 text-gray-500 transition-all duration-300 peer-placeholder-shown:top-2 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base peer-focus:-top-5 peer-focus:text-sm peer-focus:text-sky-800 px-3 peer-focus:px-1">
+                    <input type="tel" id="company" name="company" class="peer h-10 w-full border border-gray-300 rounded-md shadow-sm p-2 text-gray-900 placeholder-transparent focus:outline-none focus:border-sky-800" placeholder="Empresa" aria-label="Company"/>
+                    <label for="company" class="absolute left-0 -top-3.5 text-gray-500 transition-all duration-300 peer-placeholder-shown:top-2 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base peer-focus:-top-5 peer-focus:text-sm peer-focus:text-sky-800 px-3 peer-focus:px-1">
                       Empresa
                     </label>
                   </div>                  

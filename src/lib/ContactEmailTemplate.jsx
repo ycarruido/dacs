@@ -1,6 +1,6 @@
 const ContactEmailTemplate = (bodyContent, lead) => {
 
-  console.log(lead[0].name)
+  //console.log(lead[0].name)
     const htmlContent = `
       <html>
         <body style="font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 20px;">
@@ -21,6 +21,8 @@ const ContactEmailTemplate = (bodyContent, lead) => {
                 <ul>
                   <li>${lead[0].name}</li>
                   <li>${lead[0].email}</li>
+                  <li>${lead[0].phone}</li>
+                  <li>${lead[0].company}</li>
                 </ul>
               </td>
             </tr>
