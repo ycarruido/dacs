@@ -11,7 +11,7 @@ const Navbar = () => {
         { title: "Servicios", path: "#services900" },
         { title: "Empresa", path: "#about901" },
         { title: "Portafolio", path: "/portfolio" }, // Cambiamos a la ruta absoluta
-        { title: "Blog", path: "#testimonials" },
+        // { title: "Blog", path: "#testimonials" },
         { title: "FAQ", path: "/faq" } // Cambiamos a la ruta absoluta
     ];
 

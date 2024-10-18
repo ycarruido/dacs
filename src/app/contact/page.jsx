@@ -181,7 +181,7 @@ function ContactForm({ servicesItems, isSubmitting, handleSubmit, formSent }) {
       <div className="pt-1">
         <Button
           type="submit"
-          className="w-full text-white bg-sky-800 hover:bg-sky-600 active:bg-sky-900 ring-offset-2 ring-sky-600 focus:ring"
+          className="w-full sm:w-full md:w-1/2 lg:w-1/2 xl:w-1/2 text-white bg-sky-800 hover:bg-sky-600 active:bg-sky-900 ring-offset-2 ring-sky-600 focus:ring"
           disabled={isSubmitting}
         >
           {isSubmitting ? "Enviando..." : "Enviar Mensaje"}
