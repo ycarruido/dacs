@@ -3,6 +3,7 @@ import Footer from '../components/ui/Footer/Footer';
 import '../styles/globals.css';
 import Navbar from '../components/ui/Navbar/Navbar';
 import BackToTopButton from '../components/ui/BackToTopButton/BackToTopButton';
+import Script from 'next/script';
 
 import {
   Poppins
@@ -23,6 +24,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={poppins.className} >
+
+        {/* Google reCAPTCHA V3*/}
+        {/* <Script 
+          strategy='beforeInteractive'
+          src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_DACS_GCAPTCHA_SITEKEY}`}
+        /> */}
+
         <Navbar />
           <main>
             {children}
