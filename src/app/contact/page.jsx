@@ -11,9 +11,9 @@ export default function ContactPage() {
   const [formSent, setFormSent] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const servicesItems = [
-    "Desarrollo web",
-    "Desarrollo Móvil",
-    "Páginas Web",
+    "Desarrollo Apps web",
+    "Desarrollo Apps Móvil",
+    "Diseño de Páginas Web",
     "Marketing",
     "Información",
   ];
