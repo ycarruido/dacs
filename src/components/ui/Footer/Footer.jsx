@@ -3,7 +3,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
 
     const socialNetworks = [
-        { Icon: XIcon, href: "#", fontSize: 20},
+        { Icon: XIcon, href: "https://x.com/dacsoftware", fontSize: 20},
         { Icon: InstagramIcon, href: "#", fontSize: 24},
         { Icon: FacebookIcon, href: "#", fontSize: 24},
     ];
