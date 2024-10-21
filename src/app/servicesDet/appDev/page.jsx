@@ -19,22 +19,22 @@ function AppDev() {
       {/* Imagen principal */}
       <div className="mb-12 bg-gray-200 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 px-2 py-2">
         <img 
-          src="/img/webDev2.png" 
+          src="/img/webDev2.webp" 
           alt="Desarrollo Web" 
           className="w-full h-auto rounded-2xl shadow-lg hidden sm-md:hidden lg:block" // Solo se muestra en pantallas grandes
         />
         <img 
-          src="/img/webDev3.png" 
+          src="/img/webDev3.webp" 
           alt="Desarrollo Web" 
           className="w-full h-auto rounded-2xl shadow-lg hidden sm-md:hidden lg:block" // Solo se muestra en pantallas grandes
         />
         <img 
-          src="/img/webDev4.png" 
+          src="/img/webDev4.webp" 
           alt="Desarrollo Web" 
           className="w-full h-auto rounded-2xl shadow-lg hidden md:block lg:block" // Mostrar en pantallas medianas y grandes
         />
         <img 
-          src="/img/webDev5.png" 
+          src="/img/webDev5.webp" 
           alt="Desarrollo Web" 
           className="w-full h-auto rounded-2xl shadow-lg block" // Mostrar en todas las pantallas
         />

@@ -41,7 +41,7 @@ function DigMkg() {
         {/* SEO Section */}
         <div className="bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition-shadow duration-300">
           <img
-            src="/img/seo-icon.png"
+            src="/img/seo-icon.webp"
             alt="SEO"
             className="w-full mx-auto mb-4 rounded-2xl"
           />
@@ -64,7 +64,7 @@ function DigMkg() {
         {/* SEM Section */}
         <div className="bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition-shadow duration-300">
           <img
-            src="/img/sem-icon.png"
+            src="/img/sem-icon.webp"
             alt="SEM"
             className="w-full mx-auto mb-4 rounded-2xl"
           />
@@ -87,7 +87,7 @@ function DigMkg() {
         {/* CRO Section */}
         <div className="bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition-shadow duration-300">
           <img
-            src="/img/cro-icon.png"
+            src="/img/cro-icon.webp"
             alt="CRO"
             className="w-full mx-auto mb-4 rounded-2xl"
           />

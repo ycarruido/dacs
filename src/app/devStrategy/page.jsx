@@ -71,7 +71,7 @@ function devStrategy() {
         <div>
           <div className="flex flex-col items-center text-center rounded-3xl bg-white p-2 text-gray-700 border-4 border-gray-700 border-opacity-50 w-full m-4">
             <img
-              src="/img/análisisRequerimientos.png"
+              src="/img/análisisRequerimientos.webp"
               alt="Análisis de Requerimientos"
               className="w-full mx-auto rounded-2xl"
             />
@@ -112,7 +112,7 @@ function devStrategy() {
         <div>
           <div className="flex flex-col items-center text-center rounded-3xl bg-white p-2 text-gray-700 border-4 border-gray-700 border-opacity-50 w-full m-4">
             <img
-              src="/img/disenodeprototipos.png"
+              src="/img/disenodeprototipos.webp"
               alt="Diseño de Prototipos"
               className="w-full mx-auto rounded-2xl"
             />
@@ -153,7 +153,7 @@ function devStrategy() {
         <div>
           <div className="flex flex-col items-center text-center rounded-3xl bg-white p-2 text-gray-700 border-4 border-gray-700 border-opacity-50 w-full m-4">
             <img
-              src="/img/agile_development.png"
+              src="/img/agile_development.webp"
               alt="Desarrollo Ágil"
               className="w-full mx-auto rounded-2xl"
             />
@@ -194,7 +194,7 @@ function devStrategy() {
         <div>
           <div className="flex flex-col items-center text-center rounded-3xl bg-white p-2 text-gray-700 border-4 border-gray-700 border-opacity-50 w-full m-4">
             <img
-              src="/img/pruebas_exhaustivas.png"
+              src="/img/pruebas_exhaustivas.webp"
               alt="Integración y Pruebas Exhaustivas"
               className="w-full mx-auto rounded-2xl"
             />
@@ -234,7 +234,7 @@ function devStrategy() {
         <div>
           <div className="flex flex-col items-center text-center rounded-3xl bg-white p-2 text-gray-700 border-4 border-gray-700 border-opacity-50 w-full m-4">
             <img
-              src="/img/diseñodeprototipos.png"
+              src="/img/diseñodeprototipos.webp"
               alt="Implementación y Soporte Continuo"
               className="w-full mx-auto rounded-2xl"
             />
