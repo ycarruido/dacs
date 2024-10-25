@@ -58,12 +58,7 @@ export default function ContactPage() {
               </p>
               <p className="mt-3">
                 Puedes enviarnos un mensaje de WhatsApp a
-                <a
-                  href="mailto:solicitudes@tesisalacarta.com"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-sky-800 hover:text-sky-600 font-medium duration-150"
-                >
+                <a target="_blank" href="https://wa.me/5804241700657" className="m-2 text-gray-850 hover:text-sky-800 font-medium duration-150">
                   +58 0424-1700657
                 </a>
               </p>
