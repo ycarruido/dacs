@@ -14,7 +14,15 @@ import {
 import CurrencyBitcoinIcon from "@mui/icons-material/CurrencyBitcoin"; // Icono para Bitcoin
 
 const coins = ["BTC", "ETH", "LTC", "XRP", "DOGE", "WLD"]; // Símbolos de criptomonedas
-const fiatCurrencies = ["EUR", "VES", "COP", "CLP"]; // Monedas fiat disponibles
+const fiatCurrencies2 = ["EUR", "VES", "COP", "CLP"]; // Monedas fiat disponibles
+
+const fiatCurrencies = [
+  { ide: "EUR", name: "Euro" },
+  { ide: "VES", name: "Bolívar Venezolano" },
+  { ide: "COP", name: "Peso Colombiano" },
+  { ide: "CLP", name: "Peso Chileno" },
+];
+
 
 const CryptoCalculator = () => {
   const [selectedCoin, setSelectedCoin] = useState("BTC"); // Valor por defecto
@@ -175,11 +183,11 @@ const CryptoCalculator = () => {
         >
           {fiatCurrencies.map((currency) => (
             <MenuItem
-              key={currency}
-              value={currency}
+              key={currency.ide}
+              value={currency.ide}
               sx={{ fontSize: "0.9rem" }}
             >
-              {currency}
+              {currency.ide} - {currency.name}
             </MenuItem>
           ))}
         </Select>
