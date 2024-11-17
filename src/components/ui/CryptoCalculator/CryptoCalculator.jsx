@@ -89,12 +89,33 @@ const CryptoCalculator = () => {
   const priceInUSD = prices[selectedCoin]?.usd || 0;
 
   return (
-    <Box sx={{ maxWidth: 400, mx: "auto", p: 2, bgcolor: "#f5f5f5", borderRadius: 2, boxShadow: 2 }}>
-      <Typography variant="h6" align="center" color="primary" gutterBottom sx={{ fontSize: "1.2rem" }}>
+    <Box
+      sx={{
+        maxWidth: 400,
+        mx: "auto",
+        p: 2,
+        bgcolor: "#f5f5f5",
+        borderRadius: 2,
+        boxShadow: 2,
+      }}
+    >
+      <Typography
+        variant="h6"
+        align="left"
+        color="primary"
+        gutterBottom
+        sx={{ fontSize: "1.2rem" }}
+      >
         Calculadora de Criptomonedas
       </Typography>
       <Box sx={{ mb: 2 }}>
-        <Typography variant="body2" color="textSecondary" sx={{ fontSize: "0.9rem" }}>Selecciona una criptomoneda:</Typography>
+        <Typography
+          variant="body2"
+          color="textSecondary"
+          sx={{ fontSize: "0.9rem" }}
+        >
+          Selecciona una criptomoneda:
+        </Typography>
         <RadioGroup value={selectedCoin} onChange={handleCoinChange} row>
           {coins.map((coin) => (
             <FormControlLabel
@@ -102,8 +123,10 @@ const CryptoCalculator = () => {
               value={coin}
               control={<Radio color="primary" sx={{ fontSize: "0.8rem" }} />}
               label={
-                <Box sx={{ display: "flex", alignItems: "center" }}>
-                  {coin === "BTC" && <CurrencyBitcoinIcon sx={{ mr: 1, fontSize: "1rem" }} />}
+                <Box sx={{ display: "flex", alignItems: "left" }}>
+                  {coin === "BTC" && (
+                    <CurrencyBitcoinIcon sx={{ mr: 1, fontSize: "1rem" }} />
+                  )}
                   <Typography sx={{ fontSize: "0.9rem" }}>{coin}</Typography>
                 </Box>
               }
@@ -123,29 +146,61 @@ const CryptoCalculator = () => {
           sx={{ fontSize: "0.9rem" }}
         />
       </Box>
-      <Box sx={{ textAlign: "center", mb: 2 }}>
-        <Typography variant="body2" sx={{ fontSize: "0.9rem" }}>Precio de {selectedCoin}:</Typography>
+      <Box sx={{ textAlign: "left", mb: 2 }}>
+        <Typography variant="body2" sx={{ fontSize: "0.9rem" }}>
+          Precio de {selectedCoin}:
+        </Typography>
         <Typography variant="h6" color="primary" sx={{ fontSize: "1.2rem" }}>
           USD: {priceInUSD ? `$${priceInUSD.toFixed(4)}` : "No disponible"}
         </Typography>
-        <Typography variant="body2" color="primary" sx={{ fontSize: "1.2rem", mt: 1 }}>
-          Total en USD: {calculateTotalInUSD ? `$${calculateTotalInUSD}` : "No disponible"}
+        <Typography
+          variant="body2"
+          color="primary"
+          sx={{ fontSize: "1.2rem", mt: 1 }}
+        >
+          Total en USD:{" "}
+          {calculateTotalInUSD ? `$${calculateTotalInUSD}` : "No disponible"}
         </Typography>
       </Box>
 
       <Box sx={{ mb: 2 }}>
-        <Typography variant="body2" sx={{ fontSize: "0.9rem" }}>Convertir en:</Typography>
-        <Select value={selectedCurrency} onChange={handleCurrencyChange} fullWidth sx={{ fontSize: "0.9rem" }}>
+        <Typography variant="body2" sx={{ fontSize: "0.9rem" }}>
+          Convertir en:
+        </Typography>
+        <Select
+          value={selectedCurrency}
+          onChange={handleCurrencyChange}
+          fullWidth
+          sx={{ fontSize: "0.9rem" }}
+        >
           {fiatCurrencies.map((currency) => (
-            <MenuItem key={currency} value={currency} sx={{ fontSize: "0.9rem" }}>
+            <MenuItem
+              key={currency}
+              value={currency}
+              sx={{ fontSize: "0.9rem" }}
+            >
               {currency}
             </MenuItem>
           ))}
         </Select>
       </Box>
-      <Box sx={{ textAlign: "center", mt: 2 }}>
+      <Box sx={{ textAlign: "left", mt: 2 }}>
+        <Typography
+          variant="body2"
+          color="textSecondary"
+          sx={{ fontSize: "0.99rem", mb: 1 }}
+        >
+          Tasa {selectedCurrency}:{" "}
+          {exchangeRates[selectedCurrency]
+            ? exchangeRates[selectedCurrency].toFixed(4)
+            : "No disponible"}
+        </Typography>
+
         <Typography variant="body2" color="primary" sx={{ fontSize: "1.2rem" }}>
-          Total {convertToSelectedCurrency ? `${selectedCurrency} ${convertToSelectedCurrency}` : "No disponible"}
+          Total{" "}
+          {convertToSelectedCurrency
+            ? `${selectedCurrency} ${convertToSelectedCurrency}`
+            : "No disponible"}
         </Typography>
       </Box>
     </Box>
