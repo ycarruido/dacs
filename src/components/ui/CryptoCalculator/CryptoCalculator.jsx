@@ -79,22 +79,48 @@ const CryptoCalculator = () => {
       <h2 className="text-xl font-bold text-blue-600 mb-6 text-center">Calculadora de Criptomonedas</h2>
 
       <div className="mb-5">
-        <label className="block text-sm text-gray-700 mb-2">Selecciona una criptomoneda:</label>
-        <div className="flex justify-around">
-          {coins.map((coin) => (
-            <label key={coin} className="flex items-center space-x-2">
-              <input
-                type="radio"
-                value={coin}
-                checked={selectedCoin === coin}
-                onChange={() => setSelectedCoin(coin)}
-                className="text-blue-500 focus:ring-blue-500"
-              />
-              <span className="text-sm font-medium">{coin}</span>
-            </label>
-          ))}
-        </div>
-      </div>
+  <label className="block text-sm text-gray-700 mb-2">Selecciona una criptomoneda:</label>
+  <div className="flex justify-around">
+    {coins.map((coin) => {
+      // Descripciones para cada criptomoneda
+      const coinDescriptions = {
+        BTC: "Bitcoin",
+        ETH: "Ethereum",
+        LTC: "Litecoin",
+        XRP: "Ripple",
+        DOGE: "Dogecoin",
+        WLD: "Worldcoin",
+      };
+
+      return (
+        <label
+          key={coin}
+          className="flex items-center space-x-2 relative group cursor-pointer"
+        >
+          <input
+            type="radio"
+            value={coin}
+            checked={selectedCoin === coin}
+            onChange={() => setSelectedCoin(coin)}
+            className="text-blue-500 focus:ring-blue-500"
+          />
+          <span
+            className="text-sm font-medium"
+            title={coinDescriptions[coin]} // Tooltip al colocar el cursor
+          >
+            {coin}
+          </span>
+
+          {/* Tooltip personalizado */}
+          <span className="absolute left-0 -top-8 bg-gray-700 text-white text-xs rounded-md px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+            {coinDescriptions[coin]}
+          </span>
+        </label>
+      );
+    })}
+  </div>
+</div>
+
 
       <div className="mb-5">
         <label htmlFor="amount" className="block text-sm font-medium text-gray-700">Cantidad</label>
