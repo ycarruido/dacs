@@ -99,7 +99,7 @@ const CryptoCalculator = () => {
   return (
     <Box
       sx={{
-        maxWidth: 400,
+        maxWidth: 600,
         mx: "auto",
         p: 2,
         bgcolor: "#f5f5f5",
