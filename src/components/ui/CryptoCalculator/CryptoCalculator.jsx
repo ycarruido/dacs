@@ -1,21 +1,7 @@
 "use client";
 import { useState, useEffect, useMemo } from "react";
-import {
-  Box,
-  Typography,
-  RadioGroup,
-  FormControlLabel,
-  Radio,
-  TextField,
-  CircularProgress,
-  Select,
-  MenuItem,
-} from "@mui/material";
-import CurrencyBitcoinIcon from "@mui/icons-material/CurrencyBitcoin"; // Icono para Bitcoin
 
 const coins = ["BTC", "ETH", "LTC", "XRP", "DOGE", "WLD"]; // Símbolos de criptomonedas
-const fiatCurrencies2 = ["EUR", "VES", "COP", "CLP"]; // Monedas fiat disponibles
-
 const fiatCurrencies = [
   { ide: "EUR", name: "Euro" },
   { ide: "VES", name: "Bolívar Venezolano" },
@@ -23,16 +9,14 @@ const fiatCurrencies = [
   { ide: "CLP", name: "Peso Chileno" },
 ];
 
-
 const CryptoCalculator = () => {
-  const [selectedCoin, setSelectedCoin] = useState("BTC"); // Valor por defecto
-  const [prices, setPrices] = useState({}); // Estado para precios
+  const [selectedCoin, setSelectedCoin] = useState("BTC");
+  const [prices, setPrices] = useState({});
   const [loading, setLoading] = useState(true);
-  const [amount, setAmount] = useState(1); // Valor inicial de la cantidad
-  const [selectedCurrency, setSelectedCurrency] = useState("USD"); // Moneda fiat por defecto
-  const [exchangeRates, setExchangeRates] = useState({}); // Tasas de cambio
+  const [amount, setAmount] = useState(1);
+  const [selectedCurrency, setSelectedCurrency] = useState("USD");
+  const [exchangeRates, setExchangeRates] = useState({});
 
-  // Hacer la solicitud a la API para obtener los precios solo una vez (cuando se monta el componente)
   useEffect(() => {
     const fetchPrices = async () => {
       setLoading(true);
@@ -59,160 +43,130 @@ const CryptoCalculator = () => {
 
     fetchPrices();
     fetchExchangeRates();
-  }, []); // Se ejecuta solo una vez al montar el componente
+  }, []);
 
-  // Función para manejar el cambio de moneda seleccionada
   const handleCoinChange = (event) => {
     setSelectedCoin(event.target.value);
   };
 
-  // Función para manejar el cambio de la cantidad
   const handleAmountChange = (event) => {
     const newValue = event.target.value;
     setAmount(newValue);
   };
 
-  // Función para manejar el cambio de moneda fiat
   const handleCurrencyChange = (event) => {
     setSelectedCurrency(event.target.value);
   };
 
-  // Calcular el valor total en USD
   const calculateTotalInUSD = useMemo(() => {
     const priceInUSD = prices[selectedCoin]?.usd || 0;
     return (priceInUSD * amount).toFixed(4);
-  }, [selectedCoin, amount, prices]); // Dependencias: solo recalcular cuando cambian selectedCoin o amount
+  }, [selectedCoin, amount, prices]);
 
-  // Convertir a la moneda seleccionada
   const convertToSelectedCurrency = useMemo(() => {
     const totalInUSD = calculateTotalInUSD;
-    const rate = exchangeRates[selectedCurrency] || 1; // Usa la tasa o 1 si no está disponible
+    const rate = exchangeRates[selectedCurrency] || 1;
     return (totalInUSD * rate).toFixed(4);
-  }, [calculateTotalInUSD, selectedCurrency, exchangeRates]); // Dependencias: solo recalcular cuando cambian totalInUSD o selectedCurrency
+  }, [calculateTotalInUSD, selectedCurrency, exchangeRates]);
 
   if (loading) {
-    return <CircularProgress />;
+    return (
+      <div className="flex justify-center items-center min-h-screen">
+        <div className="animate-spin h-8 w-8 border-4 border-blue-500 border-t-transparent rounded-full"></div>
+      </div>
+    );
   }
 
   const priceInUSD = prices[selectedCoin]?.usd || 0;
 
   return (
-    <Box
-      sx={{
-        maxWidth: 600,
-        mx: "auto",
-        p: 2,
-        bgcolor: "#f5f5f5",
-        borderRadius: 2,
-        boxShadow: 2,
-      }}
-    >
-      <Typography
-        variant="h6"
-        align="left"
-        color="primary"
-        gutterBottom
-        sx={{ fontSize: "1.2rem" }}
-      >
+    <div className="max-w-lg mx-auto p-4 bg-gray-100 rounded-lg shadow-lg">
+      <h2 className="text-lg font-semibold text-blue-600 mb-4">
         Calculadora de Criptomonedas
-      </Typography>
-      <Box sx={{ mb: 2 }}>
-        <Typography
-          variant="body2"
-          color="textSecondary"
-          sx={{ fontSize: "0.9rem" }}
-        >
+      </h2>
+      <div className="mb-4">
+        <label className="block text-sm text-gray-600 mb-2">
           Selecciona una criptomoneda:
-        </Typography>
-        <RadioGroup value={selectedCoin} onChange={handleCoinChange} row>
+        </label>
+        <div className="flex space-x-4">
           {coins.map((coin) => (
-            <FormControlLabel
-              key={coin}
-              value={coin}
-              control={<Radio color="primary" sx={{ fontSize: "0.8rem" }} />}
-              label={
-                <Box sx={{ display: "flex", alignItems: "left" }}>
-                  {coin === "BTC" && (
-                    <CurrencyBitcoinIcon sx={{ mr: 1, fontSize: "1rem" }} />
-                  )}
-                  <Typography sx={{ fontSize: "0.9rem" }}>{coin}</Typography>
-                </Box>
-              }
-            />
+            <label key={coin} className="flex items-center space-x-2">
+              <input
+                type="radio"
+                value={coin}
+                checked={selectedCoin === coin}
+                onChange={handleCoinChange}
+                className="text-blue-500 focus:ring-blue-500"
+              />
+              <span className="text-sm">{coin}</span>
+            </label>
           ))}
-        </RadioGroup>
-      </Box>
-      <Box sx={{ mb: 2 }}>
-        <TextField
-          label="Cantidad"
-          type="number"
-          value={amount}
-          onChange={handleAmountChange}
-          variant="outlined"
-          fullWidth
-          inputProps={{ min: 1, step: "any" }}
-          sx={{ fontSize: "0.9rem" }}
-        />
-      </Box>
-      <Box sx={{ textAlign: "left", mb: 2 }}>
-        <Typography variant="body2" sx={{ fontSize: "0.9rem" }}>
-          Precio de {selectedCoin}:
-        </Typography>
-        <Typography variant="h6" color="primary" sx={{ fontSize: "1.2rem" }}>
-          USD: {priceInUSD ? `$${priceInUSD.toFixed(4)}` : "No disponible"}
-        </Typography>
-        <Typography
-          variant="body2"
-          color="primary"
-          sx={{ fontSize: "1.2rem", mt: 1 }}
-        >
+        </div>
+      </div>
+      <div className="mb-4">
+  <label
+    htmlFor="amount"
+    className="block text-sm font-medium text-gray-700"
+  >
+    Cantidad
+  </label>
+  <input
+    id="amount"
+    type="number"
+    value={amount}
+    onChange={handleAmountChange}
+    className="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-sm p-2"
+    min={1}
+    step="any"
+  />
+</div>
+      <div className="mb-4">
+        <p className="text-sm text-gray-600">
+          Precio de {selectedCoin}:{" "}
+          <span className="text-blue-600 font-medium">
+            {priceInUSD ? `$${priceInUSD.toFixed(4)}` : "No disponible"}
+          </span>
+        </p>
+        <p className="text-sm text-gray-600">
           Total en USD:{" "}
-          {calculateTotalInUSD ? `$${calculateTotalInUSD}` : "No disponible"}
-        </Typography>
-      </Box>
-
-      <Box sx={{ mb: 2 }}>
-        <Typography variant="body2" sx={{ fontSize: "0.9rem" }}>
-          Convertir en:
-        </Typography>
-        <Select
+          <span className="text-green-700 font-medium">
+            {calculateTotalInUSD ? `$${calculateTotalInUSD}` : "No disponible"}
+          </span>
+        </p>
+      </div>
+      <div className="mb-4">
+        <label className="block text-sm font-medium text-gray-700">Convertir en:</label>
+        <select
           value={selectedCurrency}
           onChange={handleCurrencyChange}
-          fullWidth
-          sx={{ fontSize: "0.9rem" }}
+          className="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-sm"
         >
           {fiatCurrencies.map((currency) => (
-            <MenuItem
-              key={currency.ide}
-              value={currency.ide}
-              sx={{ fontSize: "0.9rem" }}
-            >
+            <option key={currency.ide} value={currency.ide}>
               {currency.ide} - {currency.name}
-            </MenuItem>
+            </option>
           ))}
-        </Select>
-      </Box>
-      <Box sx={{ textAlign: "left", mt: 2 }}>
-        <Typography
-          variant="body2"
-          color="textSecondary"
-          sx={{ fontSize: "0.99rem", mb: 1 }}
-        >
+        </select>
+      </div>
+      <div>
+        <p className="text-sm text-gray-600">
           Tasa {selectedCurrency}:{" "}
-          {exchangeRates[selectedCurrency]
-            ? exchangeRates[selectedCurrency].toFixed(4)
-            : "No disponible"}
-        </Typography>
-
-        <Typography variant="body2" color="primary" sx={{ fontSize: "1.2rem" }}>
-          Total{" "}
+          <span className="text-blue-600 font-medium">
+            {exchangeRates[selectedCurrency]
+              ? exchangeRates[selectedCurrency].toFixed(4)
+              : "No disponible"}
+          </span>
+        </p>
+        <p className="text-sm text-green-700 font-medium mt-2">
+          Total {selectedCurrency}:{" "}
           {convertToSelectedCurrency
             ? `${selectedCurrency} ${convertToSelectedCurrency}`
             : "No disponible"}
-        </Typography>
-      </Box>
-    </Box>
+        </p>
+      </div>
+    </div>
   );
 };
 
 export default CryptoCalculator;
+
