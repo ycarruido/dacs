@@ -39,9 +39,18 @@ const CurrencySelect = ({ currencies, selectedCurrency, setSelectedCurrency }) =
       <button
         ref={buttonRef}
         onClick={() => setIsOpen(!isOpen)}
-        className="mt-1 block w-full rounded-lg border border-sky-700 shadow-sm focus:border-blue-500 focus:ring-blue-500 text-sm text-left p-2"
+        className="mt-1 block w-full rounded-lg border border-sky-700 shadow-sm focus:border-blue-500 focus:ring-blue-500 text-sm text-left p-2 flex items-center" // Añadido 'flex' y 'items-center'
       >
-        {currencies.find(c => c.ide === selectedCurrency)?.name || "Selecciona una moneda"}
+        {currencies.find(c => c.ide === selectedCurrency)?.flag && (
+          <img 
+            src={currencies.find(c => c.ide === selectedCurrency)?.flag} 
+            alt={`${currencies.find(c => c.ide === selectedCurrency)?.country} flag`} 
+            className="w-4 h-4 mr-2" 
+          />
+        )}
+        <span>
+          {currencies.find(c => c.ide === selectedCurrency)?.name || "Selecciona una moneda"}
+        </span>
       </button>
       {isOpen && (
         <div
