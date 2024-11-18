@@ -28,8 +28,8 @@ const tools = [
 
 export default function SoftLab() {
   return (
-    <div className="bg-gray-50 min-h-screen p-8">
-      <div className="max-w-4xl mx-auto">
+    <section className="py-16">
+      <div className="container mx-auto px-4 sm:px-8">
         <h1 className="text-black text-3xl font-medium sm:text-4xl md:text-5xl lg:text-6xl pb-2 text-left">
           Herramientas y Utilidades
         </h1>
@@ -42,17 +42,16 @@ export default function SoftLab() {
           {tools.map((tool) => (
             <div
               key={tool.id}
-              className={`bg-white shadow-md rounded-lg p-6 transition-shadow relative ${
+              className={`bg-white shadow-md rounded-lg p-6 transition-shadow relative border border-sky-800 ${
                 tool.status === "TEST" ? "bg-gray-200" : ""
               }`}
             >
               {tool.status === "TEST" && (
-                <div className="absolute inset-0 bg-gray-500 opacity-30 rounded-lg flex justify-center items-center">
-                </div>
+                <div className="absolute inset-0 bg-gray-500 opacity-30 rounded-lg flex justify-center items-center"></div>
               )}
-              <h2 className="text-xl font-semibold text-gray-800 mb-2">
+              <h3 className="text-3xl font-medium mb-2">
                 {tool.name}
-              </h2>
+              </h3>
               <p className="text-gray-600 mb-4">{tool.description}</p>
               {tool.status === "PRD" ? (
                 <Link
@@ -68,6 +67,6 @@ export default function SoftLab() {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
