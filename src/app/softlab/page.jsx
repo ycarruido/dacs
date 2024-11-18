@@ -35,7 +35,7 @@ export default function SoftLab() {
         </h1>
         <p className="text-left text-gray-700 mb-8">
           Explora nuestras aplicaciones desarrolladas para facilitar tu día a
-          día. ¡Haz clic para usarlas!
+          día. 
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
