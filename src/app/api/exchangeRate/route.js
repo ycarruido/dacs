@@ -1,8 +1,8 @@
 
 export async function GET() {
-    const url1 = `https://open.er-api.com/v6/latest/USD`; // API gratuita para tasas de cambio
+    const url = `https://open.er-api.com/v6/latest/USD`; // API gratuita para tasas de cambio
 
-    const url = `https://openexchangerates.org/api/latest.json?app_id=${process.env.OEXR_PRO_API_KEY}`;
+    const url1 = `https://openexchangerates.org/api/latest.json?app_id=${process.env.OEXR_PRO_API_KEY}`;
     
     try {
       const response = await fetch(url);
