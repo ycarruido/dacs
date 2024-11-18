@@ -13,7 +13,7 @@ const Navbar = () => {
         { title: "Portafolio", path: "/portfolio" }, // Cambiamos a la ruta absoluta
         // { title: "Blog", path: "#testimonials" },
         { title: "FAQ", path: "/faq" },
-        { title: "Software Lab", path: "/softlab" } // Cambiamos a la ruta absoluta
+        // { title: "Software Lab", path: "/softlab" }
     ];
 
     const smoothScroll = (e, path) => {
