@@ -20,7 +20,6 @@ const fiatCurrencies = [
   { ide: "NIO", name: "Córdoba Nicaragüense", country: "Nicaragua" },
   { ide: "PEN", name: "Sol Peruano", country: "Perú" },
   { ide: "PYG", name: "Guaraní Paraguayo", country: "Paraguay" },
-  { ide: "USD", name: "Dólar Estadounidense", country: "Estados Unidos" },
   { ide: "UYU", name: "Peso Uruguayo", country: "Uruguay" },
   { ide: "VES", name: "Bolívar Venezolano", country: "Venezuela" },
   { ide: "BZD", name: "Dólar de Belice", country: "Belice" },
