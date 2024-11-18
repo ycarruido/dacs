@@ -1,11 +1,11 @@
 export async function GET() {
   const coins = ["BTC", "ETH", "LTC", "XRP", "DOGE", "WLD"]; // Usa los símbolos correctos para CoinMarketCap
-  const apiKey = '56ce0766-39e5-4f62-9195-806a37e42ecb'; // Reemplaza esto con tu API Key
+  //const apiKey = '56ce0766-39e5-4f62-9195-806a37e42ecb'; // Reemplaza esto con tu API Key
   try {
     const url = `https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?symbol=${coins.join(',')}&convert=USD`;
     const response = await fetch(url, {
       headers: {
-        'X-CMC_PRO_API_KEY': apiKey,
+        'X-CMC_PRO_API_KEY': process.env.CMC_PRO_API_KEY,
         'Accept': 'application/json'
       }
     });

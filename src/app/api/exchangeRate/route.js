@@ -1,7 +1,8 @@
-// src/app/api/exchangeRate/route.js
+
 export async function GET() {
-    const apiKey = 'ee728a6cf11c404586d78472fae7015d'; // Reemplaza con tu clave de API
-    const url = `https://open.er-api.com/v6/latest/USD`; // API gratuita para tasas de cambio
+    const url1 = `https://open.er-api.com/v6/latest/USD`; // API gratuita para tasas de cambio
+
+    const url = `https://openexchangerates.org/api/latest.json?app_id=${process.env.OEXR_PRO_API_KEY}`;
     
     try {
       const response = await fetch(url);
