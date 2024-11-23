@@ -39,7 +39,6 @@ const CryptoCalculator = () => {
       try {
         const response = await fetch("/api/crypto");
         const data = await response.json();
-        console.log("ppp: ",data)
         setPrices(data);
       } catch (error) {
         console.error("Error fetching prices", error);
