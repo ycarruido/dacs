@@ -3,8 +3,8 @@ import SVGAnimation from "../../SVGAnimation";
 
 const Hero = () => (
   <section
-    className="sm:mb-2 md:mb-24 lg:mb-24 flex items-center"
-    style={{ height: "calc(100vh - 150px)" }}
+    className="sm:mb-2 md:mb-24 lg:mb-24 flex items-center pt-14"
+    style={{ height: "calc(100vh - 150px)" }} 
   >
     <div className="flex w-full px-4 md:px-20 mx-auto h-full">
       {/* Columna izquierda (60% en pantallas grandes) */}
