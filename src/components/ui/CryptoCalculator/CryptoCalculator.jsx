@@ -207,10 +207,10 @@ const CryptoCalculator = () => {
           </span>
         </p>
         <p className="font-semibold mt-2 p-1 text-xl">
-          Total {selectedCurrency}
+          Total {selectedCurrency}:
           <span className="text-green-700 font-semibold p-1">
             {convertToSelectedCurrency
-              ? `$${convertToSelectedCurrency}`
+              ? `${convertToSelectedCurrency}`
               : "No disponible"}
           </span>
         </p>
