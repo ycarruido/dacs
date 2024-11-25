@@ -8,9 +8,9 @@ const Hero = () => (
   >
     <div className="flex w-full px-4 md:px-20 mx-auto h-full">
       {/* Columna izquierda (60% en pantallas grandes) */}
-      <div className="w-full md:w-1/2 text-left space-y-5 flex flex-col justify-center">
+      <div className="w-full md:w-1/2 text-left space-y-5 flex flex-col justify-center ">
         <h1 className="text-4xl md:text-6xl text-gray-950 font-medium sm:text-7xl">
-          Soluciones tecnológicas
+          Diseño, desarrollo e implementación de soluciones tecnológicas
         </h1>
         <p className="max-w-xl">
           Obtén presencia en línea de primera clase y automatiza tus procesos
