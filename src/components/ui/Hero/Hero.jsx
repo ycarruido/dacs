@@ -4,11 +4,11 @@ import SVGAnimation from "../../SVGAnimation";
 const Hero = () => (
   <section
     className="sm:mb-2 md:mb-24 lg:mb-24 flex items-center pt-14"
-    style={{ height: "calc(100vh - 150px)" }} 
+    style={{ height: "calc(100vh - 150px)" }}
   >
     <div className="flex w-full px-4 md:px-20 mx-auto h-full">
       {/* Columna izquierda (60% en pantallas grandes) */}
-      <div className="w-full md:w-1/2 text-left space-y-5 flex flex-col justify-center mt-18">
+      <div className="w-full md:w-1/2 h-screen flex flex-col justify-center text-left space-y-5 pb-10">
         <h1 className="text-4xl md:text-6xl text-gray-950 font-medium sm:text-7xl">
           Diseño, desarrollo e implementación de soluciones tecnológicas
         </h1>
@@ -33,9 +33,9 @@ const Hero = () => (
           </Link>
         </div>
       </div>
-      
-      <div className="hidden md:block md:w-1/2 h-full items-center justify-center"> 
-      {/* <div className="hidden md:flex md:w-1/2 h-full items-center justify-center"> */}
+
+      <div className="hidden md:block md:w-1/2 h-full items-center justify-center">
+        {/* <div className="hidden md:flex md:w-1/2 h-full items-center justify-center"> */}
         <SVGAnimation />
       </div>
     </div>
