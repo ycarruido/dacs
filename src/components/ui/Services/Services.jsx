@@ -47,7 +47,7 @@ const Services = () => {
   ];
 
   return (
-    <SectionWrapper id="services900" className="pt-12 pb-12">
+    <SectionWrapper id="services900" className="pt-2 md:pt-12 pb-12">
       <div className="container mx-auto px-8">
         <p className="text-black text-3xl font-medium sm:text-4xl md:text-5xl lg:text-6xl pb-2">
           Soluciones que ofrecemos

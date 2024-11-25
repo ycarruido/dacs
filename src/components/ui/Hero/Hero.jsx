@@ -8,7 +8,7 @@ const Hero = () => (
   >
     <div className="flex flex-col md:flex-row w-full px-4 md:px-20 mx-auto h-full">
       {/* Columna izquierda (100% en pantallas pequeñas, 50% en pantallas grandes) */}
-      <div className="w-full md:w-1/2 flex flex-col justify-center text-left space-y-5 pt-20">
+      <div className="w-full md:w-1/2 flex flex-col justify-center text-left space-y-5 pt-10 md:pt-20">
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-gray-950 font-medium">
           Diseño, desarrollo e implementación de soluciones tecnológicas
         </h1>
