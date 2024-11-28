@@ -4,25 +4,110 @@ import CurrencySelect from "../CurrencySelect/CurrencySelect";
 
 const coins = ["BTC", "ETH", "LTC", "XRP", "DOGE", "WLD"];
 const fiatCurrencies = [
-  { ide: "ARS", name: "Peso Argentino", country: "Argentina", flag: "/flags/argentina.png" },
-  { ide: "BOB", name: "Boliviano", country: "Bolivia", flag: "/flags/bolivia.png" },
-  { ide: "BRL", name: "Real Brasileño", country: "Brazil", flag: "/flags/brazil.png" },
-  { ide: "CLP", name: "Peso Chileno", country: "Chile", flag: "/flags/chile.png" },
-  { ide: "COP", name: "Peso Colombiano", country: "Colombia", flag: "/flags/colombia.png" },
-  { ide: "CRC", name: "Colón Costarricense", country: "Costa Rica", flag: "/flags/costaRica.png" },
+  {
+    ide: "ARS",
+    name: "Peso Argentino",
+    country: "Argentina",
+    flag: "/flags/argentina.png",
+  },
+  {
+    ide: "BOB",
+    name: "Boliviano",
+    country: "Bolivia",
+    flag: "/flags/bolivia.png",
+  },
+  {
+    ide: "BRL",
+    name: "Real Brasileño",
+    country: "Brazil",
+    flag: "/flags/brazil.png",
+  },
+  {
+    ide: "CLP",
+    name: "Peso Chileno",
+    country: "Chile",
+    flag: "/flags/chile.png",
+  },
+  {
+    ide: "COP",
+    name: "Peso Colombiano",
+    country: "Colombia",
+    flag: "/flags/colombia.png",
+  },
+  {
+    ide: "CRC",
+    name: "Colón Costarricense",
+    country: "Costa Rica",
+    flag: "/flags/costaRica.png",
+  },
   { ide: "CUP", name: "Peso Cubano", country: "Cuba", flag: "/flags/cuba.png" },
-  { ide: "DOP", name: "Peso Dominicano", country: "República Dominicana", flag: "/flags/dominicanRepublic.png" },
-  { ide: "EUR", name: "Euro", country: "Unión Europea", flag: "/flags/europeanUnion.png" },
-  { ide: "GTQ", name: "Quetzal Guatemalteco", country: "Guatemala", flag: "/flags/guatemala.png" },
-  { ide: "HTG", name: "Gourde Haitiano", country: "Haití", flag: "/flags/haiti.png" },
-  { ide: "HNL", name: "Lempira Hondureño", country: "Honduras", flag: "/flags/honduras.png" },
-  { ide: "MXN", name: "Peso Mexicano", country: "México", flag: "/flags/mexico.png" },
-  { ide: "NIO", name: "Córdoba Nicaragüense", country: "Nicaragua", flag: "/flags/nicaragua.png" },
+  {
+    ide: "DOP",
+    name: "Peso Dominicano",
+    country: "República Dominicana",
+    flag: "/flags/dominicanRepublic.png",
+  },
+  {
+    ide: "EUR",
+    name: "Euro",
+    country: "Unión Europea",
+    flag: "/flags/europeanUnion.png",
+  },
+  {
+    ide: "GTQ",
+    name: "Quetzal Guatemalteco",
+    country: "Guatemala",
+    flag: "/flags/guatemala.png",
+  },
+  {
+    ide: "HTG",
+    name: "Gourde Haitiano",
+    country: "Haití",
+    flag: "/flags/haiti.png",
+  },
+  {
+    ide: "HNL",
+    name: "Lempira Hondureño",
+    country: "Honduras",
+    flag: "/flags/honduras.png",
+  },
+  {
+    ide: "MXN",
+    name: "Peso Mexicano",
+    country: "México",
+    flag: "/flags/mexico.png",
+  },
+  {
+    ide: "NIO",
+    name: "Córdoba Nicaragüense",
+    country: "Nicaragua",
+    flag: "/flags/nicaragua.png",
+  },
   { ide: "PEN", name: "Sol Peruano", country: "Perú", flag: "/flags/peru.png" },
-  { ide: "PYG", name: "Guaraní Paraguayo", country: "Paraguay", flag: "/flags/paraguay.png" },
-  { ide: "UYU", name: "Peso Uruguayo", country: "Uruguay", flag: "/flags/uruguay.png" },
-  { ide: "VES", name: "Bolívar Venezolano", country: "Venezuela", flag: "/flags/venezuela.png" },
-  { ide: "BZD", name: "Dólar de Belice", country: "Belice", flag: "/flags/belize.png" },
+  {
+    ide: "PYG",
+    name: "Guaraní Paraguayo",
+    country: "Paraguay",
+    flag: "/flags/paraguay.png",
+  },
+  {
+    ide: "UYU",
+    name: "Peso Uruguayo",
+    country: "Uruguay",
+    flag: "/flags/uruguay.png",
+  },
+  {
+    ide: "VES",
+    name: "Bolívar Venezolano",
+    country: "Venezuela",
+    flag: "/flags/venezuela.png",
+  },
+  {
+    ide: "BZD",
+    name: "Dólar de Belice",
+    country: "Belice",
+    flag: "/flags/belize.png",
+  },
 ];
 
 const CryptoCalculator = () => {
@@ -184,18 +269,11 @@ const CryptoCalculator = () => {
           ))}
         </select> */}
 
-
-
-  <CurrencySelect
-    currencies={fiatCurrencies}
-    selectedCurrency={selectedCurrency}
-    setSelectedCurrency={setSelectedCurrency}
-  />
-
-
-
-
-
+        <CurrencySelect
+          currencies={fiatCurrencies}
+          selectedCurrency={selectedCurrency}
+          setSelectedCurrency={setSelectedCurrency}
+        />
       </div>
       <div>
         <p className="text-sm text-gray-700">

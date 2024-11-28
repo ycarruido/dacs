@@ -10,7 +10,7 @@ const Hero = () => (
       {/* Columna izquierda (100% en pantallas pequeñas, 50% en pantallas grandes) */}
       <div className="w-full md:w-1/2 flex flex-col justify-center text-left space-y-5 pt-10 md:pt-20">
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-gray-950 font-medium">
-          Diseño, desarrollo e implementación de soluciones tecnológicas
+        Diseño, desarrollo<br/>e implementación <br/>de soluciones tecnológicas
         </h1>
         <p className="max-w-xl text-base sm:text-lg md:text-xl">
           Obtén presencia en línea de primera clase y automatiza tus procesos
