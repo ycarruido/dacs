@@ -16,7 +16,7 @@ const poppins = Poppins({
 })
 
 export const metadata = {
-  title: 'DACSystems - Desarrollo de Aplicaciones, Sitios Web, Infraestructura, Marketing y Finanzas - ¡Contáctanos!',
+  title: 'DACSoft - Desarrollo de Aplicaciones, Sitios Web, Infraestructura, Marketing y Finanzas - ¡Contáctanos!',
   description: 'Somos su socio de confianza para el Desarrollo de Aplicaciones y Sitios Web Personalizados, Servicios de Infraestructura y Soporte, Marketing Digital y Servicios Financieros. Nuestro equipo de expertos está aquí para ayudarlo a alcanzar sus objetivos de negocio. ¡Contáctanos hoy para una consulta gratuita!',
   icons: {
     icon:[
