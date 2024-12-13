@@ -10,6 +10,7 @@ import Strategys from "../components/ui/Strategys/Strategys";
 import About from "../components/ui/About/About";
 import StatsSection from "../components/ui/StatsSection/StatsSection";
 import FeaturesApps from "../components/ui/FeaturesApps/FeaturesApps";
+import Globe from "../components/Globe";
 
 function HomePage() {
   return (
@@ -17,7 +18,10 @@ function HomePage() {
       <Head>
         <meta name="robots" content="index" />
       </Head>
-      <Hero />
+
+      <Globe />
+      {/* <Hero /> */}
+      
       <Services />
       <ListTools />
       <ButtonCTA />

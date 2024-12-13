@@ -19,7 +19,8 @@
     "react": "^18",
     "react-dom": "^18",
     "react-google-recaptcha-v3": "^1.10.1",
-    "styled-components": "^6.1.12"
+    "styled-components": "^6.1.12",
+    "three": "^0.171.0"
   },
   "devDependencies": {
     "@types/node": "22.5.2",
