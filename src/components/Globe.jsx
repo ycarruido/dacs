@@ -33,7 +33,7 @@ const GlobeWithOrbitingWindows = () => {
     const globeGeometry = new THREE.SphereGeometry(globeRadius, 64, 64);
     const textureLoader = new THREE.TextureLoader();
     const globeMaterial = new THREE.MeshStandardMaterial({
-      map: textureLoader.load("/world_map.jpg"),
+      map: textureLoader.load("/world_map.png"),
     });
     globe.current = new THREE.Mesh(globeGeometry, globeMaterial);
     scene.add(globe.current);
@@ -46,13 +46,13 @@ const GlobeWithOrbitingWindows = () => {
     const orbitRadius = 3;
     const projects = [
       { path: "/img/tools/angular.png", count: 1, name: "Angular" },
-      { path: "/img/tools/dotnet.png", count: 2, name: ".NET" },
-      { path: "/img/tools/nextjs.png", count: 3, name: "Next JS" },
-      { path: "/img/tools/nodejs.png", count: 4, name: "Node JS" },
+      { path: "/img/tools/dotnet.png", count: 8, name: ".NET" },
+      { path: "/img/tools/nextjs.png", count: 7, name: "Next JS" },
+      { path: "/img/tools/nodejs.png", count: 6, name: "Node JS" },
       { path: "/img/tools/react.png", count: 5, name: "React" },
-      { path: "/img/tools/sharepoint.png", count: 6, name: "SharePoint" },
-      { path: "/img/tools/tailwind.png", count: 7, name: "TailwindCss" },
-      { path: "/img/tools/typecript.png", count: 8, name: "TypeScript" },
+      { path: "/img/tools/sharepoint.png", count: 4, name: "SharePoint" },
+      { path: "/img/tools/tailwind.png", count: 3, name: "TailwindCss" },
+      { path: "/img/tools/typescript.png", count: 2, name: "TypeScript" },
     ];
     const orbitObjects = [];
     projects.forEach((project, index) => {
@@ -160,13 +160,13 @@ const GlobeWithOrbitingWindows = () => {
   }, []);
 
   return (
-    <div className="relative flex flex-col md:flex-row items-stretch w-full h-screen pt-10 overflow-hidden">
+    <div className="relative flex flex-col md:flex-row items-stretch w-full h-screen pt-12 overflow-hidden">
       {/* Sección de texto y botones */}
       <div className="flex flex-col justify-center w-full md:w-1/2 px-4 md:px-20 h-full">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-gray-950 font-medium text-justify pb-4">
+        <h1 className="text-3xl sm:text-3xl md:text-3xl lg:text-6xl text-gray-950 font-medium pb-4">
           Diseño, desarrollo
-          <br />e implementación <br />
-          de soluciones <br />
+          e implementación
+          de soluciones
           tecnológicas
         </h1>
         <p className="max-w-xl text-lg sm:text-xl md:text-2xl text-justify pb-4">
