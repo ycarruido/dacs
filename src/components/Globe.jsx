@@ -9,8 +9,8 @@ const GlobeWithOrbitingWindows = () => {
   const isDragging = useRef(false);
   const previousMousePosition = useRef({ x: 0, y: 0 });
   const globeRotation = useRef({ x: 0, y: 0 });
-  const globeRotationSpeed = useRef(0.002); // Velocidad de rotación constante
-  const globe = useRef(null); // Referencia para el globo
+  const globeRotationSpeed = useRef(0.002);
+  const globe = useRef(null);
 
   useEffect(() => {
     const scene = new THREE.Scene();
@@ -28,7 +28,6 @@ const GlobeWithOrbitingWindows = () => {
     renderer.setClearColor(0xffffff, 0);
     camera.position.z = 5;
 
-    // Globo
     const globeRadius = 2.7;
     const globeGeometry = new THREE.SphereGeometry(globeRadius, 64, 64);
     const textureLoader = new THREE.TextureLoader();
@@ -38,11 +37,9 @@ const GlobeWithOrbitingWindows = () => {
     globe.current = new THREE.Mesh(globeGeometry, globeMaterial);
     scene.add(globe.current);
 
-    // Luz ambiental
     const ambientLight = new THREE.AmbientLight(0xffffff, 1);
     scene.add(ambientLight);
 
-    // Ventanas que orbitan
     const orbitRadius = 3;
     const projects = [
       { path: "/img/tools/angular.png", count: 1, name: "Angular" },
@@ -54,6 +51,7 @@ const GlobeWithOrbitingWindows = () => {
       { path: "/img/tools/tailwind.png", count: 3, name: "TailwindCss" },
       { path: "/img/tools/typescript.png", count: 2, name: "TypeScript" },
     ];
+
     const orbitObjects = [];
     projects.forEach((project, index) => {
       const planeGeometry = new THREE.PlaneGeometry(0.5, 0.5);
@@ -71,24 +69,36 @@ const GlobeWithOrbitingWindows = () => {
         orbitRadius * Math.cos(angle)
       );
 
-      // Agregar texto con el conteo
       const canvas = document.createElement("canvas");
       const context = canvas.getContext("2d");
       canvas.width = 128;
       canvas.height = 64;
+
       context.fillStyle = "rgba(75, 85, 99, 0.8)";
       context.fillRect(0, 0, canvas.width, canvas.height);
+
+      context.lineWidth = 3;
+      context.strokeStyle = "white";
+      context.strokeRect(3, 3, canvas.width - 6, canvas.height - 6);
+      context.lineWidth = 2;
+      context.strokeStyle = "#034453";
+      context.strokeRect(6, 6, canvas.width - 12, canvas.height - 12);
+
       const img = new Image();
       img.src = project.path;
       img.onload = () => {
-        context.drawImage(img, 10, 10, 45, 45);
+        context.save();
+        context.beginPath();
+        context.rect(7, 10, 45, 45);
+        context.clip();
+        context.drawImage(img, 7, 10, 45, 45);
+        context.restore();
+
         context.font = "12px Arial";
         context.fillStyle = "white";
-        context.fillText(`${project.count})`, 60, 20);
-        context.fillText(`${project.name} `, 60, 40);
-        context.lineWidth = 2;
-        context.strokeStyle = "white";
-        context.strokeRect(0, 0, canvas.width, canvas.height);
+        context.fillText(`${project.count})`, 55, 25);
+        context.fillText(`${project.name}`, 55, 40);
+
         const textTexture = new THREE.CanvasTexture(canvas);
         const textMaterial = new THREE.SpriteMaterial({ map: textTexture });
         const textSprite = new THREE.Sprite(textMaterial);
@@ -97,10 +107,10 @@ const GlobeWithOrbitingWindows = () => {
         plane.add(textSprite);
         scene.add(plane);
       };
+
       orbitObjects.push({ plane, angle });
     });
 
-    // Funciones de manejo de eventos del mouse
     const onMouseDown = (event) => {
       isDragging.current = true;
       previousMousePosition.current = { x: event.clientX, y: event.clientY };
@@ -118,12 +128,10 @@ const GlobeWithOrbitingWindows = () => {
       isDragging.current = false;
     };
 
-    // Añadir eventos de mouse
     window.addEventListener("mousedown", onMouseDown);
     window.addEventListener("mousemove", onMouseMove);
     window.addEventListener("mouseup", onMouseUp);
 
-    // Animación
     const animate = () => {
       requestAnimationFrame(animate);
       if (!isDragging.current) {
@@ -141,7 +149,6 @@ const GlobeWithOrbitingWindows = () => {
     };
     animate();
 
-    // Redimensionar
     const handleResize = () => {
       camera.aspect = window.innerWidth / window.innerHeight;
       camera.updateProjectionMatrix();
@@ -149,7 +156,6 @@ const GlobeWithOrbitingWindows = () => {
     };
     window.addEventListener("resize", handleResize);
 
-    // Limpieza
     return () => {
       window.removeEventListener("resize", handleResize);
       window.removeEventListener("mousedown", onMouseDown);
@@ -161,18 +167,12 @@ const GlobeWithOrbitingWindows = () => {
 
   return (
     <div className="relative flex flex-col md:flex-row items-stretch w-full h-screen pt-12 overflow-hidden">
-      {/* Sección de texto y botones */}
       <div className="flex flex-col justify-center w-full md:w-1/2 px-4 md:px-20 h-full">
         <h1 className="text-3xl sm:text-3xl md:text-3xl lg:text-6xl text-gray-950 font-medium pb-4">
-          Diseño, desarrollo
-          e implementación
-          de soluciones
-          tecnológicas
+          Diseño, desarrollo e implementación de soluciones tecnológicas
         </h1>
         <p className="max-w-xl text-lg sm:text-xl md:text-2xl text-justify pb-4">
-          Obtén presencia en línea de primera clase y automatiza tus procesos
-          internos con nuestras soluciones: Desarrollo Web • Desarrollo de Apps
-          • Infraestructura • Soporte
+          Obtén presencia en línea de primera clase y automatiza tus procesos internos con nuestras soluciones: Desarrollo Web • Desarrollo de Apps • Infraestructura • Soporte
         </p>
         <div className="flex flex-col md:flex-row items-center justify-start gap-x-3 font-medium text-sm">
           <Link
@@ -190,7 +190,6 @@ const GlobeWithOrbitingWindows = () => {
           </Link>
         </div>
       </div>
-      {/* Sección de animación */}
       <div
         ref={containerRef}
         className="hidden md:flex w-full md:w-1/2 justify-center items-center h-full pb-10"
