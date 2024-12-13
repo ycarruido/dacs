@@ -56,9 +56,9 @@ const GlobeWithOrbitingWindows = () => {
     ];
     const orbitObjects = [];
     projects.forEach((project, index) => {
-      const planeGeometry = new THREE.PlaneGeometry(0.5, 0.5); // Tamaño reducido de las ventanas
+      const planeGeometry = new THREE.PlaneGeometry(0.5, 0.5);
       const planeMaterial = new THREE.MeshBasicMaterial({
-        color: 0x4b5563, // gray-800
+        color: 0x4b5563,
         side: THREE.DoubleSide,
         transparent: true,
         opacity: 0.8,
@@ -74,43 +74,27 @@ const GlobeWithOrbitingWindows = () => {
       // Agregar texto con el conteo
       const canvas = document.createElement("canvas");
       const context = canvas.getContext("2d");
-      canvas.width = 128; // Ajustar el tamaño del canvas para el texto
-      canvas.height = 64; // Ajustar el tamaño del canvas para el texto
-      // Fondo de la ventana
-      context.fillStyle = "rgba(75, 85, 99, 0.8)"; // gray-800 con opacidad
+      canvas.width = 128;
+      canvas.height = 64;
+      context.fillStyle = "rgba(75, 85, 99, 0.8)";
       context.fillRect(0, 0, canvas.width, canvas.height);
-
-      // Cargar la imagen
       const img = new Image();
-      img.src = project.path; // Usar la ruta de la imagen del proyecto
+      img.src = project.path;
       img.onload = () => {
-        // Dibujar la imagen en el canvas
-        context.drawImage(img, 10, 10, 45, 45); // Ajustar la posición y el tamaño de la imagen
-
-        // Estilo del texto
-        context.font = "12px Arial"; // Ajustar el tamaño de la fuente
-        context.fillStyle = "white"; // Color de texto blanco
-        context.fillText(`${project.count})`, 60, 20); // Ajustar posición del texto
-
-        context.font = "12px Arial"; // Ajustar el tamaño de la fuente
-        context.fillStyle = "white"; // Color de texto blanco
-        context.fillText(`${project.name} `, 60, 40); // Ajustar posición del texto
-
-        // Agregar el path debajo del texto
-        // context.font = "12px Arial";
-        // context.fillText(`Path: ${project.path}`, 10, 40);
-
-        // Borde doble (opcional)
-        context.lineWidth = 2; // Grosor del borde
-        context.strokeStyle = "white"; // Color del borde
-        context.strokeRect(0, 0, canvas.width, canvas.height); // Dibuja el borde exterior
-
+        context.drawImage(img, 10, 10, 45, 45);
+        context.font = "12px Arial";
+        context.fillStyle = "white";
+        context.fillText(`${project.count})`, 60, 20);
+        context.fillText(`${project.name} `, 60, 40);
+        context.lineWidth = 2;
+        context.strokeStyle = "white";
+        context.strokeRect(0, 0, canvas.width, canvas.height);
         const textTexture = new THREE.CanvasTexture(canvas);
         const textMaterial = new THREE.SpriteMaterial({ map: textTexture });
         const textSprite = new THREE.Sprite(textMaterial);
-        textSprite.scale.set(1.0, 0.5, 1); // Ajustar el tamaño del sprite de texto
-        textSprite.position.set(0, 0, 0); // Posicionar el texto en el centro del plano
-        plane.add(textSprite); // Agregar el texto como hijo del plano
+        textSprite.scale.set(1.0, 0.5, 1);
+        textSprite.position.set(0, 0, 0);
+        plane.add(textSprite);
         scene.add(plane);
       };
       orbitObjects.push({ plane, angle });
@@ -121,20 +105,15 @@ const GlobeWithOrbitingWindows = () => {
       isDragging.current = true;
       previousMousePosition.current = { x: event.clientX, y: event.clientY };
     };
-
     const onMouseMove = (event) => {
       if (isDragging.current) {
         const deltaX = event.clientX - previousMousePosition.current.x;
         const deltaY = event.clientY - previousMousePosition.current.y;
-
-        // Actualizar la rotación de la esfera basándose en el movimiento del mouse
-        globe.current.rotation.y += deltaX * 0.01; // Ajustar sensibilidad
-        globe.current.rotation.x -= deltaY * 0.01; // Ajustar sensibilidad (invertido para movimiento natural)
-
+        globe.current.rotation.y += deltaX * 0.01;
+        globe.current.rotation.x -= deltaY * 0.01;
         previousMousePosition.current = { x: event.clientX, y: event.clientY };
       }
     };
-
     const onMouseUp = () => {
       isDragging.current = false;
     };
@@ -147,7 +126,6 @@ const GlobeWithOrbitingWindows = () => {
     // Animación
     const animate = () => {
       requestAnimationFrame(animate);
-      // Aplicar la rotación constante si no se está arrastrando
       if (!isDragging.current) {
         globe.current.rotation.y += globeRotationSpeed.current;
       }
@@ -182,16 +160,16 @@ const GlobeWithOrbitingWindows = () => {
   }, []);
 
   return (
-    <div className="relative flex flex-col md:flex-row items-center w-full h-screen pt-16">
+    <div className="relative flex flex-col md:flex-row items-stretch w-full h-screen pt-10 overflow-hidden">
       {/* Sección de texto y botones */}
       <div className="flex flex-col justify-center w-full md:w-1/2 px-4 md:px-20 h-full">
-        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-gray-950 font-medium">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-gray-950 font-medium text-justify pb-4">
           Diseño, desarrollo
           <br />e implementación <br />
           de soluciones <br />
           tecnológicas
         </h1>
-        <p className="max-w-xl text-sm sm:text-base md:text-lg">
+        <p className="max-w-xl text-lg sm:text-xl md:text-2xl text-justify pb-4">
           Obtén presencia en línea de primera clase y automatiza tus procesos
           internos con nuestras soluciones: Desarrollo Web • Desarrollo de Apps
           • Infraestructura • Soporte
@@ -217,8 +195,7 @@ const GlobeWithOrbitingWindows = () => {
         ref={containerRef}
         className="hidden md:flex w-full md:w-1/2 justify-center items-center h-full pb-10"
       >
-        <canvas ref={canvasRef} className="h-[60%] md:h-full max-h-[500px]" />{" "}
-        {/* Ajusta el tamaño del canvas */}
+        <canvas ref={canvasRef} className="h-[60%] md:h-full max-h-[500px]" />
       </div>
     </div>
   );
