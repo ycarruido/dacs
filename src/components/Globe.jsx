@@ -33,7 +33,7 @@ const GlobeWithOrbitingWindows = () => {
     const globeGeometry = new THREE.SphereGeometry(globeRadius, 64, 64);
     const textureLoader = new THREE.TextureLoader();
     const globeMaterial = new THREE.MeshStandardMaterial({
-      map: textureLoader.load("/world_map.png"),
+      map: textureLoader.load("/world_map2.png"),
     });
     globe.current = new THREE.Mesh(globeGeometry, globeMaterial);
     scene.add(globe.current);
