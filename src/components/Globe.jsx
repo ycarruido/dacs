@@ -8,7 +8,7 @@ const GlobeWithOrbitingWindows = () => {
   const containerRef = useRef(null);
   const isDragging = useRef(false);
   const previousMousePosition = useRef({ x: 0, y: 0 });
-  const globeRotationSpeed = useRef(0.002);
+  const globeRotationSpeed = useRef(0.001);
   const globe = useRef(null);
 
   useEffect(() => {
@@ -145,7 +145,7 @@ const GlobeWithOrbitingWindows = () => {
         globe.current.rotation.y -= globeRotationSpeed.current; // Cambiado a '-' para rotar de derecha a izquierda
       }
       orbitObjects.forEach((obj) => {
-        obj.angle += 0.004;
+        obj.angle += 0.002;
         obj.plane.position.set(
           orbitRadius * Math.sin(obj.angle),
           0,
