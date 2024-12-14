@@ -4,7 +4,7 @@ function Brand() {
   return (
     <Link href="/">
       <img
-            src="/img/DacsLogo.svg"
+            src="/img/DacsLogo2.svg"
             width={120}
             alt="logo"
         />

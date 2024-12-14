@@ -28,11 +28,11 @@ const GlobeWithOrbitingWindows = () => {
     renderer.setClearColor(0xffffff, 0);
     camera.position.z = 5;
 
-    const globeRadius = 2.7;
+    const globeRadius = 2.3;
     const globeGeometry = new THREE.SphereGeometry(globeRadius, 64, 64);
     const textureLoader = new THREE.TextureLoader();
     const globeMaterial = new THREE.MeshStandardMaterial({
-      map: textureLoader.load("/world_map2.png"),
+      map: textureLoader.load("/world_map.png"),
     });
     globe.current = new THREE.Mesh(globeGeometry, globeMaterial);
     scene.add(globe.current);
@@ -77,8 +77,8 @@ const GlobeWithOrbitingWindows = () => {
       context.fillStyle = "rgba(75, 85, 99, 0.8)";
       context.fillRect(0, 0, canvas.width, canvas.height);
 
-      context.lineWidth = 3;
-      context.strokeStyle = "white";
+      context.lineWidth = 1;
+      context.strokeStyle = "black";
       context.strokeRect(3, 3, canvas.width - 6, canvas.height - 6);
       context.lineWidth = 2;
       context.strokeStyle = "#034453";
@@ -167,13 +167,13 @@ const GlobeWithOrbitingWindows = () => {
 
   return (
     <div className="relative flex flex-col md:flex-row items-stretch w-full h-screen pt-12 overflow-hidden">
-      <div className="flex flex-col justify-center w-full md:w-1/2 px-4 md:px-20 h-full">
-        <h1 className="text-3xl sm:text-3xl md:text-3xl lg:text-6xl text-gray-950 font-medium pb-4">
+      <div className="flex flex-col justify-center w-full md:w-1/2 px-4 md:px-20 h-full bg-gray-900">
+        <h1 className="text-3xl sm:text-3xl md:text-3xl lg:text-6xl text-white font-medium pb-4">
           Diseño, desarrollo e implementación de soluciones tecnológicas
         </h1>
-        <p className="max-w-xl text-lg sm:text-xl md:text-2xl text-justify pb-4">
-          Obtén presencia en línea de primera clase y automatiza tus procesos internos con nuestras soluciones: Desarrollo Web • Desarrollo de Apps • Infraestructura • Soporte
-        </p>
+        <p className="max-w-xl text-sm sm:text-base md:text-lg text-justify pb-4 text-white">
+  Obtén presencia en línea de primera clase y automatiza tus procesos internos con nuestras soluciones: Desarrollo Web • Desarrollo de Apps • Infraestructura • Soporte
+</p>
         <div className="flex flex-col md:flex-row items-center justify-start gap-x-3 font-medium text-sm">
           <Link
             href="/contact"
@@ -192,7 +192,7 @@ const GlobeWithOrbitingWindows = () => {
       </div>
       <div
         ref={containerRef}
-        className="hidden md:flex w-full md:w-1/2 justify-center items-center h-full pb-10"
+        className="hidden md:flex w-full md:w-1/2 justify-center items-center h-full pb-10 bg-gray-900"
       >
         <canvas ref={canvasRef} className="h-[60%] md:h-full max-h-[500px]" />
       </div>

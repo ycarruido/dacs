@@ -51,7 +51,7 @@ const Navbar = () => {
 
     return (
         <header>
-            <nav className={`bg-slate-50 w-full fixed top-0 z-10 border-b border-gray-300`}>
+            <nav className={`bg-gray-900 w-full fixed top-0 z-10 border-b border-gray-900`}>
                 <div className="custom-screen items-center mx-auto md:flex">
                     <div className="flex items-center justify-between py-2">
                         <Brand />
@@ -72,10 +72,10 @@ const Navbar = () => {
                         </div>
                     </div>
                     <div className={`flex-1 pb-3 mt-8 md:pb-0 md:mt-0 md:block ${isMenuOpen ? "" : "hidden"}`}>
-                        <ul className="menu text-gray-900 text-lg justify-end items-center space-y-6 md:flex md:space-x-6 md:space-y-0">
+                        <ul className="menu text-gray-200 text-lg justify-end items-center space-y-6 md:flex md:space-x-6 md:space-y-0">
                             {
                                 navigation.map((item, idx) => (
-                                    <li key={idx} className="duration-150 hover:text-gray-500">
+                                    <li key={idx} className="duration-150 hover:text-gray-300">
                                         <Link
                                             href={item.path}
                                             className="block"
