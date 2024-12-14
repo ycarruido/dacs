@@ -8,7 +8,6 @@ const GlobeWithOrbitingWindows = () => {
   const containerRef = useRef(null);
   const isDragging = useRef(false);
   const previousMousePosition = useRef({ x: 0, y: 0 });
-  const globeRotation = useRef({ x: 0, y: 0 });
   const globeRotationSpeed = useRef(0.002);
   const globe = useRef(null);
 
@@ -20,15 +19,27 @@ const GlobeWithOrbitingWindows = () => {
       0.1,
       1000
     );
+
     const renderer = new THREE.WebGLRenderer({
       canvas: canvasRef.current,
       alpha: true,
     });
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setClearColor(0xffffff, 0);
-    camera.position.z = 5;
 
-    const globeRadius = 2.3;
+    // Inicializa el tamaño del renderer
+    const resizeRenderer = () => {
+      const width = containerRef.current.clientWidth;
+      const height = containerRef.current.clientHeight;
+      renderer.setSize(width, height);
+      camera.aspect = width / height;
+      camera.updateProjectionMatrix();
+    };
+
+    // Configuración de la cámara
+    camera.position.z = 4; // Ajustar la posición de la cámara para que la esfera sea visible
+    resizeRenderer();
+
+    // Configuración de la esfera
+    const globeRadius = 2; // Tamaño de la esfera
     const globeGeometry = new THREE.SphereGeometry(globeRadius, 64, 64);
     const textureLoader = new THREE.TextureLoader();
     const globeMaterial = new THREE.MeshStandardMaterial({
@@ -40,7 +51,7 @@ const GlobeWithOrbitingWindows = () => {
     const ambientLight = new THREE.AmbientLight(0xffffff, 1);
     scene.add(ambientLight);
 
-    const orbitRadius = 3;
+    const orbitRadius = 2.5; // Ajustado para que las ventanas orbitantes se vean mejor
     const projects = [
       { path: "/img/tools/angular.png", count: 1, name: "Angular" },
       { path: "/img/tools/dotnet.png", count: 8, name: ".NET" },
@@ -64,19 +75,18 @@ const GlobeWithOrbitingWindows = () => {
       const plane = new THREE.Mesh(planeGeometry, planeMaterial);
       const angle = (index / projects.length) * Math.PI * 2;
       plane.position.set(
-        0,
         orbitRadius * Math.sin(angle),
+        0,
         orbitRadius * Math.cos(angle)
       );
 
+      // Crear el canvas para el texto
       const canvas = document.createElement("canvas");
       const context = canvas.getContext("2d");
       canvas.width = 128;
       canvas.height = 64;
-
       context.fillStyle = "rgba(75, 85, 99, 0.8)";
       context.fillRect(0, 0, canvas.width, canvas.height);
-
       context.lineWidth = 1;
       context.strokeStyle = "black";
       context.strokeRect(3, 3, canvas.width - 6, canvas.height - 6);
@@ -93,7 +103,6 @@ const GlobeWithOrbitingWindows = () => {
         context.clip();
         context.drawImage(img, 7, 10, 45, 45);
         context.restore();
-
         context.font = "12px Arial";
         context.fillStyle = "#EEF2FF";
         context.fillText(`${project.count})`, 55, 25);
@@ -107,7 +116,6 @@ const GlobeWithOrbitingWindows = () => {
         plane.add(textSprite);
         scene.add(plane);
       };
-
       orbitObjects.push({ plane, angle });
     });
 
@@ -119,7 +127,7 @@ const GlobeWithOrbitingWindows = () => {
       if (isDragging.current) {
         const deltaX = event.clientX - previousMousePosition.current.x;
         const deltaY = event.clientY - previousMousePosition.current.y;
-        globe.current.rotation.y += deltaX * 0.01;
+        globe.current.rotation.y -= deltaX * 0.01; // Cambiado a '-' para rotar de derecha a izquierda
         globe.current.rotation.x -= deltaY * 0.01;
         previousMousePosition.current = { x: event.clientX, y: event.clientY };
       }
@@ -127,7 +135,6 @@ const GlobeWithOrbitingWindows = () => {
     const onMouseUp = () => {
       isDragging.current = false;
     };
-
     window.addEventListener("mousedown", onMouseDown);
     window.addEventListener("mousemove", onMouseMove);
     window.addEventListener("mouseup", onMouseUp);
@@ -135,13 +142,13 @@ const GlobeWithOrbitingWindows = () => {
     const animate = () => {
       requestAnimationFrame(animate);
       if (!isDragging.current) {
-        globe.current.rotation.y += globeRotationSpeed.current;
+        globe.current.rotation.y -= globeRotationSpeed.current; // Cambiado a '-' para rotar de derecha a izquierda
       }
       orbitObjects.forEach((obj) => {
         obj.angle += 0.004;
         obj.plane.position.set(
-          0,
           orbitRadius * Math.sin(obj.angle),
+          0,
           orbitRadius * Math.cos(obj.angle)
         );
       });
@@ -150,9 +157,7 @@ const GlobeWithOrbitingWindows = () => {
     animate();
 
     const handleResize = () => {
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
+      resizeRenderer();
     };
     window.addEventListener("resize", handleResize);
 
@@ -172,8 +177,8 @@ const GlobeWithOrbitingWindows = () => {
           Diseño, desarrollo e implementación de soluciones tecnológicas
         </h1>
         <p className="max-w-xl text-sm sm:text-base md:text-lg text-justify pb-4 text-white">
-  Obtén presencia en línea de primera clase y automatiza tus procesos internos con nuestras soluciones: Desarrollo Web • Desarrollo de Apps • Infraestructura • Soporte
-</p>
+          Obtén presencia en línea de primera clase y automatiza tus procesos internos con nuestras soluciones: Desarrollo Web • Desarrollo de Apps • Infraestructura • Soporte
+        </p>
         <div className="flex flex-col md:flex-row items-center justify-start gap-x-3 font-medium text-sm">
           <Link
             href="/contact"
@@ -192,9 +197,9 @@ const GlobeWithOrbitingWindows = () => {
       </div>
       <div
         ref={containerRef}
-        className="hidden md:flex w-full md:w-1/2 justify-center items-center h-full pb-10 bg-gray-900"
+        className="flex w-full md:w-1/2 justify-center items-center h-full pb-10 bg-gray-900 overflow-hidden"
       >
-        <canvas ref={canvasRef} className="h-[60%] md:h-full max-h-[500px]" />
+        <canvas ref={canvasRef} className="w-full h-full" />
       </div>
     </div>
   );
