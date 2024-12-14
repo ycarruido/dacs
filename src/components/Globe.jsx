@@ -95,7 +95,7 @@ const GlobeWithOrbitingWindows = () => {
         context.restore();
 
         context.font = "12px Arial";
-        context.fillStyle = "white";
+        context.fillStyle = "#EEF2FF";
         context.fillText(`${project.count})`, 55, 25);
         context.fillText(`${project.name}`, 55, 40);
 
