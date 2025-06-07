@@ -71,10 +71,10 @@ const GlobeWithOrbitingWindows = () => {
     const projects = [
       { path: "/img/tools/angular.png", count: 1, name: "Angular", desc: "Ideal para apps empresariales modulares" },
       { path: "/img/tools/dotnet.png", count: 8, name: ".NET", desc: "Ideal para APIs REST y apps de escritorio" },
-      { path: "/img/tools/nextjs.png", count: 7, name: "Next JS", desc: "Framework de React para producción" },
+      { path: "/img/tools/nextjs.png", count: 7, name: "Next JS", desc: "Framework fullstack para React con SSR y SSG" },
       { path: "/img/tools/nodejs.png", count: 6, name: "Node JS", desc: "Perfecto para APIs en tiempo real" },
-      { path: "/img/tools/react.png", count: 5, name: "React", desc: "Popular para interfaces interactivas" },
-      { path: "/img/tools/sharepoint.png", count: 4, name: "SharePoint", desc: "portales empresariales integrado con Microsoft 365" },
+      { path: "/img/tools/react.png", count: 5, name: "React", desc: "Popular para interfaces UI rápidas y reactivas" },
+      { path: "/img/tools/sharepoint.png", count: 4, name: "SharePoint", desc: "Portales empresariales integrado con Microsoft 365" },
       { path: "/img/tools/tailwind.png", count: 3, name: "TailwindCss", desc: "Diseño de interfaces rápidas y limpias" },
       { path: "/img/tools/typescript.png", count: 2, name: "TypeScript", desc: "JS tipado para apps seguras y mantenibles" },
     ];
