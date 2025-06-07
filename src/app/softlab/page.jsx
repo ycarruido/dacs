@@ -29,7 +29,7 @@ const tools = [
 export default function SoftLab() {
   return (
     <section className="py-16">
-      <div className="container mx-auto px-4 sm:px-8">
+      <div className="container mx-auto px-4 sm:px-8 p-10">
         <h1 className="text-black text-3xl font-medium sm:text-4xl md:text-5xl lg:text-6xl pb-2 text-left">
           Herramientas y Utilidades
         </h1>

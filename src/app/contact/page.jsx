@@ -47,7 +47,7 @@ export default function ContactPage() {
     <GoogleReCaptchaProvider reCaptchaKey={process.env.NEXT_PUBLIC_DACS_GCAPTCHA_SITEKEY}>
       <div className="mt-14 pb-12">
         <div className="custom-screen text-gray-600">
-          <div className="max-w-lg mx-auto gap-12 flex flex-col lg:flex-row lg:max-w-none">
+          <div className="max-w-lg mx-auto gap-12 flex flex-col lg:flex-row lg:max-w-none p-10">
             <div className="max-w-lg sm:text-center lg:text-left">
               <p className="text-black text-3xl font-medium sm:text-4xl md:text-5xl lg:text-6xl pb-2">
                 Háblenos sobre su proyecto
