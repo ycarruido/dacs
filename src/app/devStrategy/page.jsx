@@ -31,11 +31,7 @@ function devStrategy() {
           Estrategia de Desarrollo
         </p>
         <p className="mt-4 text-gray-600">
-          En un entorno donde la tecnología avanza rápidamente, las empresas
-          necesitan soluciones digitales que no solo sean funcionales, sino que
-          también se adapten al crecimiento y los cambios del mercado. Para
-          lograrlo, nos enfocamos en aplicar una estrategia de desarrollo ágil,
-          basada en una colaboración cercana con nuestros clientes.
+          Nuestra estrategia de desarrollo se basa en un enfoque integral y flexible que acompaña a tu proyecto desde el primer contacto hasta su evolución continua. Entendemos que cada negocio es único, por eso trabajamos para entregar soluciones tecnológicas alineadas con tus objetivos reales, garantizando calidad, eficiencia y adaptabilidad. Combinamos metodologías ágiles, comunicación constante y un compromiso cercano para que cada etapa aporte valor tangible y te sientas respaldado durante todo el proceso.
         </p>
       </div>
 
@@ -44,25 +40,21 @@ function devStrategy() {
         {/* Descripción del servicio a la izquierda */}
         <div className="flex flex-col justify-center">
           <h2 className="text-xl font-semibold mb-4">
-            1. Análisis de Requerimientos y Planificación
+            1. Entendimiento profundo de requerimientos y objetivos
           </h2>
           <p className="mb-4">
-            Todo proyecto exitoso comienza con una planificación detallada y un
-            análisis profundo de los requerimientos. Antes de escribir una sola
-            línea de código, trabajamos de la mano con nuestros clientes para
-            entender a fondo sus objetivos, problemas y necesidades.{" "}
-            <strong>¿Qué hacemos en esta fase?</strong>
+            Para crear soluciones que realmente funcionen, primero nos sumergimos en tu negocio y tus metas. No solo recopilamos datos, sino que buscamos entender el contexto y los retos que enfrentan tus usuarios. <strong>¿Qué hacemos en esta fase?</strong>
           </p>
 
           <ul className="space-y-2 pb-6">
             {[
-              "Entrevistas con los clientes: Nos tomamos el tiempo para conocer tus metas, el público al que te diriges y los retos que estás enfrentando.",
-              "Identificación de las funcionalidades clave: Analizamos las funciones esenciales que debe tener la solución para cumplir con las expectativas y maximizar su utilidad.",
-              "Planificación del alcance: Definimos los entregables, el tiempo estimado de desarrollo y los recursos necesarios, asegurando que todo esté alineado con los objetivos del proyecto.",
+              "Diálogo cercano contigo para captar los objetivos reales y prioridades de tu proyecto.",
+              "Análisis del contexto y las problemáticas que la solución debe resolver para aportar valor.",
+              "Definición clara de los criterios de éxito y expectativas para asegurar un rumbo alineado desde el inicio.",
             ].map((item, index) => (
-              <li key={index} className="items-left justify-between">
+              <li key={index} className="items-left justify-between flex gap-2">
                 <ArrowRightAltIcon className="text-sky-800" />
-                <span className="pr-10">{item}</span>{" "}
+                <span className="pr-10">{item}</span>
               </li>
             ))}
           </ul>
@@ -71,80 +63,72 @@ function devStrategy() {
         <div>
           <div className="flex flex-col items-center text-center rounded-3xl bg-white p-2 text-gray-700 border-4 border-gray-700 border-opacity-50 w-full m-4">
             <img
-              src="/img/análisisRequerimientos.webp"
-              alt="Análisis de Requerimientos"
+              src="/img/entendimientoRequerimientos.webp"
+              alt="Entendimiento profundo de requerimientos"
               className="w-full mx-auto rounded-2xl"
             />
           </div>
         </div>
       </div>
+
 
       {/* Diseño de Prototipos */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-20 p-6">
-        {/* Descripción del servicio a la izquierda */}
-        <div className="flex flex-col justify-center">
-          <h2 className="text-xl font-semibold mb-4">
-            2. Diseño de Prototipos y Pruebas de Concepto
-          </h2>
-          <p className="mb-4">
-            Una vez que se han definido los requerimientos, el siguiente paso es
-            traducir las ideas en algo tangible. Aquí es donde entran los
-            prototipos y las pruebas de concepto, que nos permiten visualizar
-            cómo se verá y funcionará la solución final antes de pasar a la fase
-            de desarrollo completo.
-            <strong>¿Qué beneficios aporta esta etapa?</strong>
-          </p>
+          {/* Descripción del servicio a la izquierda */}
+          <div className="flex flex-col justify-center">
+            <h2 className="text-xl font-semibold mb-4">
+              2. Diseño rápido de prototipos y validación de ideas
+            </h2>
+            <p className="mb-4">
+              Transformamos ideas en modelos tangibles que puedes ver y probar rápido. Esto nos permite identificar ajustes necesarios y garantizar que el producto final cumpla con tus expectativas. <strong>¿Qué beneficios aporta esta etapa?</strong>
+            </p>
 
-          <ul className="space-y-2 pb-6">
-            {[
-              "Validación temprana del diseño: Presentamos varias opciones visuales de cómo podría verse la solución, permitiendo que el cliente vea con claridad las diferentes posibilidades.",
-              "Ajustes sobre la marcha: Si algo no se alinea con lo esperado, es más fácil y económico hacer ajustes en esta fase.",
-              "Pruebas de usabilidad iniciales: En algunos casos, realizamos pruebas rápidas con usuarios reales para validar la funcionalidad y obtener retroalimentación sobre el diseño propuesto.",
-            ].map((item, index) => (
-              <li key={index} className="items-left justify-between">
-                <ArrowRightAltIcon className="text-sky-800" />
-                <span className="pr-10">{item}</span>{" "}
-              </li>
-            ))}
-          </ul>
-        </div>
+            <ul className="space-y-2 pb-6">
+              {[
+                "Creación ágil de prototipos funcionales que reflejan la esencia de la solución propuesta.",
+                "Validación temprana con usuarios y stakeholders para recoger feedback valioso y real.",
+                "Reducción de riesgos al detectar problemas y mejorar conceptos antes del desarrollo completo.",
+              ].map((item, index) => (
+                <li key={index} className="items-left justify-between flex gap-2">
+                  <ArrowRightAltIcon className="text-sky-800" />
+                  <span className="pr-10">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-        <div>
-          <div className="flex flex-col items-center text-center rounded-3xl bg-white p-2 text-gray-700 border-4 border-gray-700 border-opacity-50 w-full m-4">
-            <img
-              src="/img/disenodeprototipos.webp"
-              alt="Diseño de Prototipos"
-              className="w-full mx-auto rounded-2xl"
-            />
+          <div>
+            <div className="flex flex-col items-center text-center rounded-3xl bg-white p-2 text-gray-700 border-4 border-gray-700 border-opacity-50 w-full m-4">
+              <img
+                src="/img/disenodeprototipos.webp"
+                alt="Diseño rápido de prototipos"
+                className="w-full mx-auto rounded-2xl"
+              />
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Desarrollo Ágil*/}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-20 p-6">
+
+        {/* Desarrollo iterativo con foco en el valor real*/}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-20 p-6">
         {/* Descripción del servicio a la izquierda */}
         <div className="flex flex-col justify-center">
           <h2 className="text-xl font-semibold mb-4">
-            3. Desarrollo Ágil con Iteraciones Continuas
+            3. Desarrollo iterativo con foco en el valor real
           </h2>
           <p className="mb-4">
-            La metodología ágil es el corazón de nuestra estrategia de
-            desarrollo. En lugar de esperar hasta el final para presentar una
-            solución completa, dividimos el proyecto en iteraciones o sprints.
-            Esto significa que desarrollamos, probamos y entregamos pequeñas
-            partes del proyecto de forma continua.
-            <strong>¿Cómo funciona esta metodología?</strong>
+            Nuestro desarrollo se basa en ciclos cortos que priorizan entregar funcionalidades que realmente aporten valor a tu negocio. Así, no solo avanzamos rápido, sino que garantizamos que cada entrega tenga un impacto tangible. <strong>¿Cómo funciona esta metodología?</strong>
           </p>
 
           <ul className="space-y-2 pb-6">
             {[
-              "Sprints cortos y enfocados: Cada iteración tiene una duración definida, normalmente entre 1 y 4 semanas. En ese tiempo, trabajamos en un conjunto específico de funciones o mejoras.",
-              "Revisión continua: Al final de cada sprint, presentamos lo que hemos desarrollado al cliente para su revisión y retroalimentación, asegurando que vamos en la dirección correcta.",
-              "Flexibilidad para adaptarse a cambios: La gran ventaja de esta metodología es que podemos ajustar el proyecto en función de los nuevos requisitos o cambios en el mercado, sin que esto afecte significativamente el tiempo de entrega.",
+              "Ciclos de trabajo breves y claros, donde cada entrega está orientada a resolver necesidades específicas y prioritarias.",
+              "Retroalimentación constante para ajustar y mejorar el producto según lo que realmente importa a los usuarios y al negocio.",
+              "Flexibilidad para adaptarnos a cambios y nuevos requerimientos sin perder el foco en los resultados que generan valor real.",
             ].map((item, index) => (
-              <li key={index} className="items-left justify-between">
+              <li key={index} className="items-left justify-between flex gap-2">
                 <ArrowRightAltIcon className="text-sky-800" />
-                <span className="pr-10">{item}</span>{" "}
+                <span className="pr-10">{item}</span>
               </li>
             ))}
           </ul>
@@ -154,19 +138,20 @@ function devStrategy() {
           <div className="flex flex-col items-center text-center rounded-3xl bg-white p-2 text-gray-700 border-4 border-gray-700 border-opacity-50 w-full m-4">
             <img
               src="/img/agile_development.webp"
-              alt="Desarrollo Ágil"
+              alt="Desarrollo iterativo con foco en el valor real"
               className="w-full mx-auto rounded-2xl"
             />
           </div>
         </div>
       </div>
 
-      {/* Integración y Pruebas Exhaustivas */}
+
+      {/* Integración continua y pruebas automatizadas. */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-20 p-6">
         {/* Descripción del servicio a la izquierda */}
         <div className="flex flex-col justify-center">
           <h2 className="text-xl font-semibold mb-4">
-            4. Integración y Pruebas Exhaustivas
+            4. Integración continua y pruebas automatizadas.
           </h2>
           <p className="mb-4">
             La calidad del software es fundamental para el éxito de cualquier
@@ -207,7 +192,7 @@ function devStrategy() {
         {/* Descripción del servicio a la izquierda */}
         <div className="flex flex-col justify-center">
           <h2 className="text-xl font-semibold mb-4">
-            5. Implementación y Soporte Continuo
+            5. Despliegue y Soporte Continuo
           </h2>
           <p className="mb-4">
             Una vez que la solución ha sido aprobada y está lista para ser
@@ -234,7 +219,7 @@ function devStrategy() {
         <div>
           <div className="flex flex-col items-center text-center rounded-3xl bg-white p-2 text-gray-700 border-4 border-gray-700 border-opacity-50 w-full m-4">
             <img
-              src="/img/diseñodeprototipos.webp"
+              src="/img/implementacion.webp"
               alt="Implementación y Soporte Continuo"
               className="w-full mx-auto rounded-2xl"
             />

@@ -283,13 +283,13 @@ function WebDev() {
 
       <Strategys
         strTitle="Estrategia de Desarrollo "
-        strsubtitle="Enfocados en una metodología ágil, colaboramos estrechamente con nuestros clientes para desarrollar soluciones tecnológicas escalables y personalizadas, desde la planificación hasta la implementación."
+        strsubtitle="Colaboramos estrechamente con nuestros clientes para desarrollar soluciones tecnológicas escalables y personalizadas, desde la planificación hasta la implementación."
         strText={[
-          "Análisis de requerimientos y planificación.",
-          "Diseño de prototipos y pruebas de concepto.",
-          "Desarrollo ágil con iteraciones continuas.",
-          "Integración y pruebas exhaustivas.",
-          "Implementación y soporte continuo.",
+          "Entendimiento profundo de requerimientos y objetivos.",
+          "Diseño rápido de prototipos y validación de ideas.",
+          "Desarrollo iterativo con foco en el valor real.",
+          "Integración continua y pruebas automatizadas.",
+          "Despliegue y soporte evolutivo.",
         ]}
         strBtn="Leer más"
         path="/devStrategy"
