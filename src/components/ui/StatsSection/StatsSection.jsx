@@ -62,7 +62,7 @@ const StatsSection = () => {
     { IconComponent: CodeOffIcon, number: 12, label: "Lenguajes y Herramientas" },
     { IconComponent: GroupAddIcon, number: 3, label: "Colaboraciones Activas" },
     { IconComponent: ScheduleIcon, number: 247, label: "Disponibilidad" },
-    { IconComponent: HandshakeIcon, number: 8, label: "Años de Experiencia" },
+    { IconComponent: HandshakeIcon, number: 10, label: "Años de Experiencia" },
   ];
 
 
