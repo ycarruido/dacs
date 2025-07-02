@@ -12,9 +12,12 @@ const Hero = () => (
   </section>
 );
 
-// export default Hero;
+export default Hero;
 
 
+
+
+//Banner completo
 // import Link from "next/link";
 // import SVGAnimation from "../../SVGAnimation";
 
