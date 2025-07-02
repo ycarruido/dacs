@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import Link from "next/link";
+import Hero from "../components/ui/Hero/Hero";
 
 const ParticleBanner = () => {
   const canvasRef = useRef(null);
@@ -152,6 +153,7 @@ const ParticleBanner = () => {
           <canvas ref={canvasRef} className="w-full h-full" />
         ) : (
           <div className="absolute text-white text-center px-6 py-4 bg-black/70 rounded z-10">
+            <Hero /> 
             Tu navegador o equipo no puede cargar la animación 3D 😓 <br />
             Prueba desde otro dispositivo o navegador actualizado.
           </div>
