@@ -1,3 +1,4 @@
+
 "use client";
 import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
@@ -256,6 +257,8 @@ export default GlobeWithOrbitingWindows;
 
 
 
+
+//se oculata en pantallas pequenas
 // "use client";
 // import { useEffect, useRef, useState } from "react";
 // import * as THREE from "three";
