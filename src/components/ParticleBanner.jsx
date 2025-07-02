@@ -3,18 +3,6 @@ import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import Link from "next/link";
 
-const isWebGLAvailable = () => {
-  try {
-    const canvas = document.createElement("canvas");
-    return !!(
-      window.WebGLRenderingContext &&
-      (canvas.getContext("webgl") || canvas.getContext("experimental-webgl"))
-    );
-  } catch (e) {
-    return false;
-  }
-};
-
 const ParticleBanner = () => {
   const canvasRef = useRef(null);
   const containerRef = useRef(null);
@@ -31,12 +19,6 @@ const ParticleBanner = () => {
   }, []);
 
   useEffect(() => {
-    if (!isWebGLAvailable()) {
-      setWebglSupported(false);
-      console.warn("WebGL no está disponible en este navegador.");
-      return;
-    }
-
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(
       75,
@@ -44,11 +26,19 @@ const ParticleBanner = () => {
       0.1,
       1000
     );
-    const renderer = new THREE.WebGLRenderer({
-      canvas: canvasRef.current,
-      alpha: true,
-      antialias: true,
-    });
+
+    let renderer;
+    try {
+      renderer = new THREE.WebGLRenderer({
+        canvas: canvasRef.current,
+        alpha: true,
+        antialias: true,
+      });
+    } catch (error) {
+      console.error("No se pudo crear el contexto WebGL:", error);
+      setWebglSupported(false);
+      return;
+    }
 
     const resizeRenderer = () => {
       const width = containerRef.current.clientWidth;
@@ -162,8 +152,8 @@ const ParticleBanner = () => {
           <canvas ref={canvasRef} className="w-full h-full" />
         ) : (
           <div className="absolute text-white text-center px-6 py-4 bg-black/70 rounded z-10">
-            Tu navegador no soporta animaciones 3D 😥 <br />
-            Prueba con Chrome, Firefox o Edge actualizado.
+            Tu navegador o equipo no puede cargar la animación 3D 😓 <br />
+            Prueba desde otro dispositivo o navegador actualizado.
           </div>
         )}
         {tooltip.visible && (
@@ -181,6 +171,7 @@ const ParticleBanner = () => {
 };
 
 export default ParticleBanner;
+
 
 
 
