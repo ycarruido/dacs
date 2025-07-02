@@ -12,7 +12,7 @@ const SVGAnimation = () => {
   }, []);
 
   return (
-    <div className="flex justify-center items-center h-[500px] bg-gradient-to-r from-white-50 to-purple-500">
+    <div className="flex justify-center items-center h-[600px] bg-gradient-to-r from-white-50 to-purple-500">
       <svg
         viewBox="0 0 700 400" // Reducir el alto a 400
         className={`container ${isReady ? 'visible' : 'invisible'}`}
